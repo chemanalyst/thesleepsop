@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sleep SOP — Science-Backed Sleep</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F4F2EE;
+    --surface: #FFFFFF;
+    --ink: #0D0D0D;
+    --ink-muted: #6B6861;
+    --accent: #1A3A5C;
+    --accent-light: #D6E4F0;
+    --accent-mid: #4A7FA8;
+    --rule: #DDDBD5;
+    --tag-bg: #EBF3F9;
+    --mono: 'DM Mono', monospace;
+    --serif: 'DM Serif Display', serif;
+    --sans: 'Instrument Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(244,242,238,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5vw;
+    height: 60px;
+  }
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 88vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+    padding: 6rem 5vw 4rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .hero-label {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-mid);
+    display: flex; align-items: center; gap: 0.6rem;
+    margin-bottom: 1.6rem;
+  }
+  .hero-label::before {
+    content: '';
+    display: inline-block;
+    width: 20px; height: 1px;
+    background: var(--accent-mid);
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.8rem, 5vw, 4.8rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 1.6rem;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--ink-muted);
+    max-width: 440px;
+    line-height: 1.75;
+    margin-bottom: 2.4rem;
+    font-weight: 300;
+  }
+  .hero-cta {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    background: var(--accent);
+    color: #fff;
+    padding: 0.85rem 1.8rem;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none; cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .hero-cta:hover { background: #122840; transform: translateY(-1px); }
+  .hero-cta svg { transition: transform 0.2s; }
+  .hero-cta:hover svg { transform: translateX(3px); }
+
+  .hero-visual {
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .sleep-clock {
+    width: 320px; height: 320px;
+    border: 1px solid var(--rule);
+    border-radius: 50%;
+    background: var(--surface);
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 0 0 12px var(--bg), 0 0 0 13px var(--rule);
+  }
+  .clock-inner {
+    text-align: center;
+  }
+  .clock-time {
+    font-family: var(--mono);
+    font-size: 2.6rem;
+    font-weight: 300;
+    color: var(--accent);
+    display: block;
+    letter-spacing: -0.02em;
+  }
+  .clock-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-top: 0.3rem;
+  }
+  .clock-arc {
+    position: absolute; inset: 12px;
+    border-radius: 50%;
+  }
+  .sleep-phase-ring {
+    position: absolute; inset: -24px;
+    pointer-events: none;
+  }
+  .phase-dot {
+    position: absolute;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .phase-dot.deep { background: var(--accent); top: 18%; left: 82%; }
+  .phase-dot.rem  { background: var(--accent-mid); top: 82%; left: 76%; }
+  .phase-dot.light { background: #A8C8E0; top: 72%; left: 22%; }
+  .phase-dot-label {
+    position: absolute;
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    white-space: nowrap;
+  }
+  .phase-dot-label.deep { top: 14%; left: 85%; }
+  .phase-dot-label.rem  { top: 84%; left: 79%; }
+  .phase-dot-label.light { top: 74%; left: 5%; }
+
+  .stat-strip {
+    display: flex; gap: 2.4rem;
+    margin-top: 1.4rem;
+  }
+  .stat { }
+  .stat-num {
+    font-family: var(--mono);
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--accent);
+    display: block;
+  }
+  .stat-desc {
+    font-size: 0.72rem;
+    color: var(--ink-muted);
+    letter-spacing: 0.03em;
+  }
+
+  /* ── SECTION WRAPPER ── */
+  section { padding: 5rem 5vw; }
+  .section-label {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-mid);
+    margin-bottom: 0.6rem;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .section-label::before {
+    content: attr(data-num);
+    font-size: 0.65rem;
+    opacity: 0.5;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .section-sub {
+    font-size: 0.95rem;
+    color: var(--ink-muted);
+    max-width: 520px;
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+  }
+
+  /* ── TIPS ── */
+  #tips { background: var(--surface); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+  .tip-card {
+    background: var(--surface);
+    padding: 2rem;
+    transition: background 0.2s;
+    cursor: default;
+  }
+  .tip-card:hover { background: var(--accent-light); }
+  .tip-tag {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    margin-bottom: 1rem;
+  }
+  .tip-num {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    color: var(--rule);
+    float: right;
+    margin-top: 0.1rem;
+  }
+  .tip-card h3 {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    line-height: 1.3;
+    margin-bottom: 0.7rem;
+    color: var(--ink);
+  }
+  .tip-card p {
+    font-size: 0.88rem;
+    color: var(--ink-muted);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+  .tip-cite {
+    margin-top: 1rem;
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    color: var(--accent-mid);
+    letter-spacing: 0.05em;
+    border-top: 1px solid var(--rule);
+    padding-top: 0.75rem;
+  }
+
+  /* ── QUIZ ── */
+  #quiz { background: var(--bg); }
+  .quiz-wrapper {
+    max-width: 680px;
+  }
+  .quiz-box {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    padding: 2.4rem;
+  }
+  .quiz-progress {
+    display: flex; gap: 4px; margin-bottom: 2rem;
+  }
+  .quiz-progress-bar {
+    height: 3px;
+    background: var(--rule);
+    flex: 1;
+    transition: background 0.4s;
+  }
+  .quiz-progress-bar.active { background: var(--accent); }
+
+  .quiz-step { display: none; }
+  .quiz-step.visible { display: block; }
+
+  .quiz-q {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem;
+    line-height: 1.35;
+  }
+  .quiz-hint {
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    margin-bottom: 1.6rem;
+    font-weight: 300;
+  }
+  .quiz-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .quiz-option {
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    padding: 0.85rem 1rem;
+    font-size: 0.88rem;
+    font-family: var(--sans);
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.15s;
+    color: var(--ink);
+  }
+  .quiz-option:hover { border-color: var(--accent-mid); background: var(--accent-light); }
+  .quiz-option.selected { border-color: var(--accent); background: var(--accent-light); color: var(--accent); font-weight: 500; }
+
+  .quiz-nav {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 1.8rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--rule);
+  }
+  .quiz-back {
+    background: none; border: none;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  .quiz-back:hover { color: var(--accent); }
+  .quiz-next {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.6rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .quiz-next:hover { background: #122840; }
+  .quiz-next:disabled { opacity: 0.3; cursor: not-allowed; }
+
+  .quiz-result { display: none; }
+  .quiz-result.visible { display: block; }
+  .result-score {
+    font-family: var(--mono);
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+  .result-label {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+  .result-desc {
+    font-size: 0.9rem;
+    color: var(--ink-muted);
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 1.6rem;
+  }
+  .result-recs {
+    background: var(--tag-bg);
+    padding: 1.4rem;
+    border-left: 3px solid var(--accent);
+  }
+  .result-recs-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-mid);
+    margin-bottom: 0.8rem;
+  }
+  .result-recs ul {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 0.5rem;
+  }
+  .result-recs li {
+    font-size: 0.85rem;
+    color: var(--ink);
+    padding-left: 1.2rem;
+    position: relative;
+    font-weight: 300;
+  }
+  .result-recs li::before {
+    content: '→';
+    position: absolute; left: 0;
+    color: var(--accent-mid);
+    font-family: var(--mono);
+  }
+  .quiz-restart {
+    margin-top: 1.4rem;
+    background: none;
+    border: 1px solid var(--rule);
+    padding: 0.6rem 1.2rem;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: var(--ink-muted);
+    transition: all 0.2s;
+  }
+  .quiz-restart:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ── NEWSLETTER ── */
+  #newsletter {
+    background: var(--accent);
+    color: #fff;
+    border-top: none;
+  }
+  #newsletter .section-label { color: rgba(255,255,255,0.5); }
+  #newsletter .section-title { color: #fff; }
+  #newsletter .section-sub { color: rgba(255,255,255,0.65); max-width: 460px; }
+  .nl-form {
+    display: flex;
+    gap: 0;
+    max-width: 460px;
+  }
+  .nl-input {
+    flex: 1;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-right: none;
+    padding: 0.85rem 1.2rem;
+    color: #fff;
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .nl-input::placeholder { color: rgba(255,255,255,0.35); }
+  .nl-input:focus { border-color: rgba(255,255,255,0.5); }
+  .nl-btn {
+    background: #fff;
+    color: var(--accent);
+    border: 1px solid #fff;
+    padding: 0.85rem 1.6rem;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s, color 0.2s;
+  }
+  .nl-btn:hover { background: var(--accent-light); color: var(--accent); }
+  .nl-note {
+    margin-top: 0.8rem;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.4);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+  .nl-success {
+    display: none;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    color: rgba(255,255,255,0.8);
+    margin-top: 0.8rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    background: var(--accent);
+    padding: 1.6rem 5vw;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  footer span {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero > * { animation: fadeUp 0.7s ease both; }
+  .hero > *:nth-child(2) { animation-delay: 0.15s; }
+  .hero-label { animation: fadeUp 0.6s ease both; }
+
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  .clock-arc-svg {
+    position: absolute; inset: 0;
+    animation: rotate 60s linear infinite;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; padding: 3rem 5vw; }
+    .hero-visual { display: none; }
+    .quiz-options { grid-template-columns: 1fr; }
+    .nl-form { flex-direction: column; }
+    .nl-input { border-right: 1px solid rgba(255,255,255,0.2); border-bottom: none; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">The Sleep SOP</a>
+  <ul class="nav-links">
+    <li><a href="#tips">Research</a></li>
+    <li><a href="#quiz">Sleep Quiz</a></li>
+    <li><a href="#newsletter">Newsletter</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <div class="hero-label">Evidence-based sleep science</div>
+    <h1>Sleep <em>better</em>,<br>live longer.</h1>
+    <p class="hero-sub">Peer-reviewed research, translated into practical habits. No gadgets — just the science of what actually works.</p>
+    <div class="stat-strip">
+      <div class="stat">
+        <span class="stat-num">7–9h</span>
+        <span class="stat-desc">adult requirement</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">1 in 3</span>
+        <span class="stat-desc">adults sleep too little</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">26%</span>
+        <span class="stat-desc">mortality risk reduction</span>
+      </div>
+    </div>
+    <br>
+    <a href="#quiz" class="hero-cta">
+      Take the sleep quiz
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+  <div class="hero-visual">
+    <div class="sleep-clock">
+      <svg class="clock-arc-svg" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="160" cy="160" r="140" stroke="#D6E4F0" stroke-width="1" stroke-dasharray="4 8"/>
+        <path d="M160 20 A140 140 0 0 1 280 200" stroke="#1A3A5C" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <div class="clock-inner">
+        <span class="clock-time" id="live-time">22:30</span>
+        <span class="clock-label">Optimal sleep window</span>
+      </div>
+      <div class="phase-dot deep"></div>
+      <div class="phase-dot rem"></div>
+      <div class="phase-dot light"></div>
+      <span class="phase-dot-label deep">Deep</span>
+      <span class="phase-dot-label rem">REM</span>
+      <span class="phase-dot-label light">Light</span>
+    </div>
+  </div>
+</div>
+
+<!-- TIPS -->
+<section id="tips">
+  <div class="section-label" data-num="01">Science-Backed Research</div>
+  <h2 class="section-title">What the evidence says</h2>
+  <p class="section-sub">Each recommendation below is drawn from peer-reviewed research published in journals including <em>Nature</em>, <em>Sleep</em>, and <em>PNAS</em>.</p>
+  <div class="tips-grid">
+
+    <div class="tip-card">
+      <span class="tip-num">01</span>
+      <div class="tip-tag">Circadian Rhythm</div>
+      <h3>Anchor your wake time</h3>
+      <p>Rising at the same time every day — even weekends — stabilises your circadian rhythm more effectively than varying bedtime. Consistent wake times regulate cortisol onset and morning alertness.</p>
+      <div class="tip-cite">Walker, M. (2017) · <em>Why We Sleep</em> · NeuroscienceLab</div>
+    </div>
+
+    <div class="tip-card">
+      <span class="tip-num">02</span>
+      <div class="tip-tag">Temperature</div>
+      <h3>Cool your bedroom to 18°C</h3>
+      <p>Core body temperature must drop ~1–2°C to initiate sleep. Studies show a bedroom temperature of 65–68°F (18–20°C) significantly reduces sleep onset latency and increases deep sleep duration.</p>
+      <div class="tip-cite">Czeisler et al. (2018) · <em>PNAS</em> · Harvard Medical School</div>
+    </div>
+
+    <div class="tip-card">
+      <span class="tip-num">03</span>
+      <div class="tip-tag">Light Exposure</div>
+      <h3>10 minutes of morning light</h3>
+      <p>Morning light exposure within 30–60 minutes of waking anchors your melatonin rhythm ~16 hours later. Even overcast outdoor light provides 10,000+ lux vs. indoor lighting's 200–500 lux.</p>
+      <div class="tip-cite">Gooley et al. (2011) · <em>J. Clin. Endocrinol.</em></div>
+    </div>
+
+    <div class="tip-card">
+      <span class="tip-num">04</span>
+      <div class="tip-tag">Caffeine</div>
+      <h3>Cut caffeine after 1pm</h3>
+      <p>Caffeine's half-life is 5–7 hours. A 3pm coffee still has 50% concentration at 9pm. It blocks adenosine receptors, reducing deep sleep by up to 20% even when you feel like you slept fine.</p>
+      <div class="tip-cite">Landolt et al. (2004) · <em>Sleep</em> · University of Zurich</div>
+    </div>
+
+    <div class="tip-card">
+      <span class="tip-num">05</span>
+      <div class="tip-tag">Alcohol</div>
+      <h3>Alcohol fragments REM sleep</h3>
+      <p>Alcohol is sedating but not sleep-inducing. It suppresses REM sleep in the first half of the night and causes rebound wakefulness in the second half, leaving you less restored despite sleeping through the night.</p>
+      <div class="tip-cite">Arnedt et al. (2011) · <em>Sleep Medicine Reviews</em></div>
+    </div>
+
+    <div class="tip-card">
+      <span class="tip-num">06</span>
+      <div class="tip-tag">Exercise</div>
+      <h3>Exercise, but not too late</h3>
+      <p>Regular moderate exercise increases slow-wave sleep by 65% in studies. However, vigorous exercise within 2 hours of bedtime raises core temperature and delays sleep onset by elevating adrenaline.</p>
+      <div class="tip-cite">Youngstedt et al. (2019) · <em>Sleep Medicine Reviews</em></div>
+    </div>
+
+    <div class="tip-card">
+      <span class="tip-num">07</span>
+      <div class="tip-tag">Napping</div>
+      <h3">The 20-minute nap rule</h3>
+      <p>Naps under 20 minutes restore alertness without entering slow-wave sleep, avoiding "sleep inertia" grogginess. Longer naps are counterproductive for night-time sleep quality.</p>
+      <div class="tip-cite">Mednick et al. (2008) · <em>Sleep</em> · UC San Diego</div>
+    </div>
+
+    <div class="tip-card">
+      <span class="tip-num">08</span>
+      <div class="tip-tag">Anxiety</div>
+      <h3>Write worries down before bed</h3>
+      <p>A 2018 Baylor University study found that writing a to-do list for the next day — specifically tasks you need to complete — reduced time to fall asleep by 9 minutes, comparable to some sleep medications.</p>
+      <div class="tip-cite">Scullin et al. (2018) · <em>Experimental Brain Research</em></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz">
+  <div class="section-label" data-num="02">Sleep Quality Assessment</div>
+  <h2 class="section-title">How well do you sleep?</h2>
+  <p class="section-sub">Answer 5 quick questions and get a personalised, evidence-based sleep score with targeted recommendations.</p>
+  <div class="quiz-wrapper">
+    <div class="quiz-box">
+      <div class="quiz-progress" id="quiz-progress">
+        <div class="quiz-progress-bar active" data-step="0"></div>
+        <div class="quiz-progress-bar" data-step="1"></div>
+        <div class="quiz-progress-bar" data-step="2"></div>
+        <div class="quiz-progress-bar" data-step="3"></div>
+        <div class="quiz-progress-bar" data-step="4"></div>
+      </div>
+
+      <!-- Q1 -->
+      <div class="quiz-step visible" data-step="0">
+        <p class="quiz-q">How many hours do you typically sleep on weeknights?</p>
+        <p class="quiz-hint">Include total sleep, not just time in bed</p>
+        <div class="quiz-options">
+          <button class="quiz-option" data-score="0">Less than 5 hours</button>
+          <button class="quiz-option" data-score="1">5 – 6 hours</button>
+          <button class="quiz-option" data-score="3">6 – 7 hours</button>
+          <button class="quiz-option" data-score="5">7 – 9 hours</button>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="quiz-step" data-step="1">
+        <p class="quiz-q">How long does it usually take you to fall asleep?</p>
+        <p class="quiz-hint">Sleep onset latency (SOL) is a key health marker</p>
+        <div class="quiz-options">
+          <button class="quiz-option" data-score="1">Over 45 mins</button>
+          <button class="quiz-option" data-score="2">30 – 45 mins</button>
+          <button class="quiz-option" data-score="4">10 – 30 mins</button>
+          <button class="quiz-option" data-score="5">Under 10 mins</button>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="quiz-step" data-step="2">
+        <p class="quiz-q">How often do you wake during the night?</p>
+        <p class="quiz-hint">Brief awakenings are normal; prolonged ones indicate fragmentation</p>
+        <div class="quiz-options">
+          <button class="quiz-option" data-score="0">3+ times, hard to return</button>
+          <button class="quiz-option" data-score="2">2–3 times</button>
+          <button class="quiz-option" data-score="4">Once</button>
+          <button class="quiz-option" data-score="5">Rarely or never</button>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="quiz-step" data-step="3">
+        <p class="quiz-q">Do you consume caffeine after midday?</p>
+        <p class="quiz-hint">Coffee, tea, energy drinks, and some medications all count</p>
+        <div class="quiz-options">
+          <button class="quiz-option" data-score="0">Daily, past 4pm</button>
+          <button class="quiz-option" data-score="2">Often, around 2–4pm</button>
+          <button class="quiz-option" data-score="4">Occasionally before 2pm</button>
+          <button class="quiz-option" data-score="5">Never after midday</button>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="quiz-step" data-step="4">
+        <p class="quiz-q">How do you feel upon waking most mornings?</p>
+        <p class="quiz-hint">Subjective sleep quality is a validated clinical measure</p>
+        <div class="quiz-options">
+          <button class="quiz-option" data-score="0">Exhausted, can't function</button>
+          <button class="quiz-option" data-score="2">Groggy for 1–2 hours</button>
+          <button class="quiz-option" data-score="4">Slightly tired but okay</button>
+          <button class="quiz-option" data-score="5">Alert and refreshed</button>
+        </div>
+      </div>
+
+      <!-- Result -->
+      <div class="quiz-result" id="quiz-result">
+        <span class="result-score" id="result-score-num">--</span>
+        <p class="result-label" id="result-label">Calculating…</p>
+        <p class="result-desc" id="result-desc"></p>
+        <div class="result-recs">
+          <div class="result-recs-label">Your top recommendations</div>
+          <ul id="result-recs-list"></ul>
+        </div>
+        <button class="quiz-restart" id="quiz-restart">Retake quiz</button>
+      </div>
+
+      <div class="quiz-nav" id="quiz-nav">
+        <button class="quiz-back" id="quiz-back" style="visibility:hidden">← Back</button>
+        <button class="quiz-next" id="quiz-next" disabled>Continue →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section id="newsletter">
+  <div class="section-label" data-num="03">Stay Informed</div>
+  <h2 class="section-title">Get the latest<br>sleep science.</h2>
+  <p class="section-sub">Join the list for evidence-based sleep insights delivered to your inbox. No fluff. Unsubscribe anytime.</p>
+  <form class="nl-form" id="nl-form">
+    <input class="nl-input" type="email" placeholder="your@email.com" required id="nl-email">
+    <button class="nl-btn" type="submit">Subscribe</button>
+  </form>
+  <p class="nl-note">No spam. Just science.</p>
+  <p class="nl-success" id="nl-success">✓ &nbsp;You're on the list. We'll be in touch.</p>
+</section>
+
+<footer>
+  <span>© 2026 The Sleep SOP</span>
+  <span>Science-backed sleep improvement</span>
+</footer>
+
+<script>
+  // Live time
+  function updateTime() {
+    const now = new Date();
+    const h = String(now.getHours()).padStart(2,'0');
+    const m = String(now.getMinutes()).padStart(2,'0');
+    document.getElementById('live-time').textContent = h + ':' + m;
+  }
+  updateTime();
+  setInterval(updateTime, 10000);
+
+  // Quiz logic
+  const totalSteps = 5;
+  let currentStep = 0;
+  let scores = new Array(totalSteps).fill(null);
+  let selections = new Array(totalSteps).fill(null);
+
+  const steps = document.querySelectorAll('.quiz-step');
+  const result = document.getElementById('quiz-result');
+  const nextBtn = document.getElementById('quiz-next');
+  const backBtn = document.getElementById('quiz-back');
+  const nav = document.getElementById('quiz-nav');
+  const progressBars = document.querySelectorAll('.quiz-progress-bar');
+
+  function updateProgress() {
+    progressBars.forEach((bar, i) => {
+      bar.classList.toggle('active', i <= currentStep);
+    });
+  }
+
+  function updateNav() {
+    backBtn.style.visibility = currentStep > 0 ? 'visible' : 'hidden';
+    nextBtn.disabled = scores[currentStep] === null;
+    nextBtn.textContent = currentStep === totalSteps - 1 ? 'See results →' : 'Continue →';
+  }
+
+  function showStep(n) {
+    steps.forEach(s => s.classList.remove('visible'));
+    if (n < totalSteps) {
+      steps[n].classList.add('visible');
+      result.classList.remove('visible');
+      nav.style.display = 'flex';
+    } else {
+      result.classList.add('visible');
+      nav.style.display = 'none';
+      showResult();
+    }
+    updateProgress();
+    updateNav();
+    // Restore selection UI
+    if (n < totalSteps && selections[n] !== null) {
+      const opts = steps[n].querySelectorAll('.quiz-option');
+      opts.forEach(o => o.classList.toggle('selected', parseInt(o.dataset.score) === selections[n]));
+    }
+  }
+
+  steps.forEach((step, si) => {
+    step.querySelectorAll('.quiz-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        step.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        scores[si] = parseInt(opt.dataset.score);
+        selections[si] = parseInt(opt.dataset.score);
+        updateNav();
+      });
+    });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (scores[currentStep] === null) return;
+    currentStep++;
+    showStep(currentStep);
+  });
+
+  backBtn.addEventListener('click', () => {
+    if (currentStep > 0) { currentStep--; showStep(currentStep); }
+  });
+
+  document.getElementById('quiz-restart').addEventListener('click', () => {
+    currentStep = 0;
+    scores.fill(null);
+    selections.fill(null);
+    steps.forEach(s => s.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected')));
+    showStep(0);
+    progressBars.forEach((b,i) => b.classList.toggle('active', i === 0));
+  });
+
+  function showResult() {
+    const total = scores.reduce((a,b) => a + (b||0), 0);
+    const max = 25;
+    const pct = Math.round((total / max) * 100);
+    document.getElementById('result-score-num').textContent = pct + '%';
+    updateProgress();
+
+    let label, desc, recs;
+    if (pct >= 80) {
+      label = "Excellent sleep health";
+      desc = "Your sleep habits align well with current scientific recommendations. Your answers suggest healthy sleep architecture with sufficient duration, quality, and regularity.";
+      recs = ["Maintain your consistent wake time", "Continue limiting late caffeine", "Consider tracking HRV to optimise further"];
+    } else if (pct >= 55) {
+      label = "Moderate sleep quality";
+      desc = "There's meaningful room for improvement. Small, consistent changes to your sleep hygiene can produce significant gains in cognitive function and physical recovery.";
+      recs = ["Set a fixed wake time — even on weekends", "Move all caffeine before midday", "Drop bedroom temp to 18°C / 65°F"];
+    } else {
+      label = "Sleep deprivation risk";
+      desc = "Your responses suggest chronic sleep insufficiency or significant sleep disruption. Research links this pattern to increased cardiovascular, metabolic, and cognitive risk over time.";
+      recs = ["Prioritise 7–9h as a non-negotiable health target", "Eliminate caffeine after 12pm immediately", "Check for potential sleep disorders (sleep apnea, frequent snoring etc)", "Begin a wind-down routine 60 mins before bed"];
+    }
+
+    document.getElementById('result-label').textContent = label;
+    document.getElementById('result-desc').textContent = desc;
+    const ul = document.getElementById('result-recs-list');
+    ul.innerHTML = recs.map(r => `<li>${r}</li>`).join('');
+  }
+
+  // Newsletter
+  document.getElementById('nl-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('nl-email').value;
+    if (email) {
+      document.getElementById('nl-form').style.display = 'none';
+      document.getElementById('nl-success').style.display = 'block';
+    }
+  });
+</script>
+</body>
+</html>
