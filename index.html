@@ -463,9 +463,11 @@
     display: flex;
     gap: 0;
     max-width: 460px;
+    width: 100%;
   }
   .nl-input {
     flex: 1;
+    min-width: 0;
     background: rgba(255,255,255,0.08);
     border: 1px solid rgba(255,255,255,0.2);
     border-right: none;
@@ -475,6 +477,7 @@
     font-size: 0.9rem;
     outline: none;
     transition: border-color 0.2s;
+    width: 100%;
   }
   .nl-input::placeholder { color: rgba(255,255,255,0.35); }
   .nl-input:focus { border-color: rgba(255,255,255,0.5); }
@@ -490,8 +493,10 @@
     cursor: pointer;
     white-space: nowrap;
     transition: background 0.2s, color 0.2s;
+    flex-shrink: 0;
   }
   .nl-btn:hover { background: var(--accent-light); color: var(--accent); }
+  .nl-btn:disabled { opacity: 0.6; cursor: not-allowed; }
   .nl-note {
     margin-top: 0.8rem;
     font-size: 0.72rem;
@@ -504,8 +509,19 @@
     font-family: var(--mono);
     font-size: 0.8rem;
     letter-spacing: 0.05em;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.9);
     margin-top: 0.8rem;
+    padding: 0.8rem 1rem;
+    background: rgba(255,255,255,0.1);
+    border-left: 3px solid rgba(255,255,255,0.5);
+  }
+  .nl-error {
+    display: none;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: #ffaaaa;
+    margin-top: 0.6rem;
+    letter-spacing: 0.04em;
   }
 
   /* ── FOOTER ── */
@@ -546,8 +562,9 @@
     .hero { grid-template-columns: 1fr; min-height: auto; padding: 3rem 5vw; }
     .hero-visual { display: none; }
     .quiz-options { grid-template-columns: 1fr; }
-    .nl-form { flex-direction: column; }
+    .nl-form { flex-direction: column; max-width: 100%; }
     .nl-input { border-right: 1px solid rgba(255,255,255,0.2); border-bottom: none; }
+    .nl-btn { width: 100%; text-align: center; padding: 0.9rem; }
     .nav-links { display: none; }
   }
 </style>
@@ -569,7 +586,7 @@
   <div>
     <div class="hero-label">Evidence-based sleep science</div>
     <h1>Sleep <em>better</em>,<br>live longer.</h1>
-    <p class="hero-sub">Peer-reviewed research, translated into practical habits. No gadgets — just the science of what actually works.</p>
+    <p class="hero-sub">Peer-reviewed research, translated into practical habits. No supplements, no gadgets — just the science of what actually works.</p>
     <div class="stat-strip">
       <div class="stat">
         <span class="stat-num">7–9h</span>
@@ -785,11 +802,12 @@
   <h2 class="section-title">Get the latest<br>sleep science.</h2>
   <p class="section-sub">Join the list for evidence-based sleep insights delivered to your inbox. No fluff. Unsubscribe anytime.</p>
   <form class="nl-form" id="nl-form">
-    <input class="nl-input" type="email" placeholder="your@email.com" required id="nl-email">
-    <button class="nl-btn" type="submit">Subscribe</button>
+    <input class="nl-input" type="email" placeholder="your@email.com" required id="nl-email" autocomplete="email">
+    <button class="nl-btn" type="submit" id="nl-btn">Subscribe</button>
   </form>
   <p class="nl-note">No spam. Just science.</p>
   <p class="nl-success" id="nl-success">✓ &nbsp;You're on the list. We'll be in touch.</p>
+  <p class="nl-error" id="nl-error">Something went wrong. Please try again.</p>
 </section>
 
 <footer>
@@ -913,12 +931,38 @@
   }
 
   // Newsletter
-  document.getElementById('nl-form').addEventListener('submit', (e) => {
+  // Newsletter — Formspree
+  const FORMSPREE_ID = 'mzdaqopv';
+
+  document.getElementById('nl-form').addEventListener('submit', async (e) => {
     e.preventDefault();
     const email = document.getElementById('nl-email').value;
-    if (email) {
-      document.getElementById('nl-form').style.display = 'none';
-      document.getElementById('nl-success').style.display = 'block';
+    const btn = document.getElementById('nl-btn');
+    const success = document.getElementById('nl-success');
+    const error = document.getElementById('nl-error');
+
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    error.style.display = 'none';
+
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ email, _replyto: email, _subject: 'New Sleep SOP subscriber' })
+      });
+
+      if (res.ok) {
+        document.getElementById('nl-form').style.display = 'none';
+        document.querySelector('.nl-note').style.display = 'none';
+        success.style.display = 'block';
+      } else {
+        throw new Error('Form error');
+      }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = 'Subscribe';
+      error.style.display = 'block';
     }
   });
 </script>
