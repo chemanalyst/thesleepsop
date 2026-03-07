@@ -3,7 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Sleep SOP — Science-Backed Sleep</title>
+
+<!-- ── PRIMARY SEO ── -->
+<title>The Sleep SOP — Science-Backed Sleep Improvement</title>
+<meta name="description" content="Evidence-based sleep tips backed by peer-reviewed research. Discover what actually improves sleep quality — from circadian rhythm, temperature, light exposure, to caffeine and alcohol. Take our free sleep quality quiz.">
+<meta name="keywords" content="sleep improvement, science-backed sleep tips, how to sleep better, sleep quality, circadian rhythm, sleep hygiene, sleep research, insomnia tips, deep sleep, REM sleep">
+<meta name="author" content="The Sleep SOP">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.thesleepsop.com/">
+
+<!-- ── OPEN GRAPH (Facebook, WhatsApp, LinkedIn) ── -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Sleep SOP">
+<meta property="og:title" content="The Sleep SOP — Science-Backed Sleep Improvement">
+<meta property="og:description" content="Peer-reviewed sleep science translated into practical habits. No gadgets — just what the research actually says. Take our free sleep quality quiz.">
+<meta property="og:url" content="https://www.thesleepsop.com/">
+<meta property="og:image" content="https://www.thesleepsop.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_GB">
+
+<!-- ── TWITTER / X CARD ── -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Sleep SOP — Science-Backed Sleep Improvement">
+<meta name="twitter:description" content="Peer-reviewed sleep science translated into practical habits. Take the free sleep quality quiz.">
+<meta name="twitter:image" content="https://www.thesleepsop.com/og-image.jpg">
+
+<!-- ── FAVICON (replace with your actual favicon files) ── -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- ── SCHEMA.ORG STRUCTURED DATA ── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.thesleepsop.com/#website",
+      "url": "https://www.thesleepsop.com/",
+      "name": "The Sleep SOP",
+      "description": "Science-backed sleep improvement tips based on peer-reviewed research",
+      "publisher": {
+        "@id": "https://www.thesleepsop.com/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.thesleepsop.com/#organization",
+      "name": "The Sleep SOP",
+      "url": "https://www.thesleepsop.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.thesleepsop.com/logo.png"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.thesleepsop.com/#webpage",
+      "url": "https://www.thesleepsop.com/",
+      "name": "The Sleep SOP — Science-Backed Sleep Improvement",
+      "description": "Evidence-based sleep tips backed by peer-reviewed research. Discover what actually improves sleep quality.",
+      "isPartOf": { "@id": "https://www.thesleepsop.com/#website" },
+      "about": {
+        "@type": "MedicalWebPage",
+        "name": "Sleep Health and Sleep Hygiene",
+        "medicalAudience": "Patient"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the optimal bedroom temperature for sleep?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Research recommends 18–20°C (65–68°F). Core body temperature must drop 1–2°C to initiate sleep, and a cool room facilitates this process."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does caffeine affect sleep quality?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Caffeine blocks adenosine receptors and has a half-life of 5–7 hours. A coffee at 3pm can reduce deep sleep by up to 20%. Cutting caffeine before midday is recommended."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does alcohol help you sleep?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Alcohol is sedating but suppresses REM sleep in the first half of the night and causes rebound wakefulness in the second half, leaving you less restored."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long should a nap be?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Naps under 20 minutes restore alertness without causing sleep inertia. Longer naps enter slow-wave sleep and cause grogginess upon waking."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What time should I wake up for better sleep?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Waking at the same time every day — including weekends — is the single most effective way to stabilise your circadian rhythm and improve sleep quality."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -294,7 +410,39 @@
     letter-spacing: 0.05em;
     border-top: 1px solid var(--rule);
     padding-top: 0.75rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.8rem;
+    flex-wrap: wrap;
   }
+  .tip-cite a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--accent-light);
+    padding-bottom: 1px;
+    white-space: nowrap;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .tip-cite a:hover { color: var(--accent-mid); border-color: var(--accent-mid); }
+  .tip-card p + p { margin-top: 0.65rem; }
+  .tip-short { display: block; }
+  .tip-long { display: none; margin-top: 0.65rem; }
+  .tip-long.open { display: block; }
+  .tip-read-more {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    margin-top: 0.75rem; background: none; border: none; padding: 0;
+    font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--accent); cursor: pointer;
+    border-bottom: 1px solid var(--accent-light); padding-bottom: 1px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .tip-read-more:hover { color: var(--accent-mid); border-color: var(--accent-mid); }
+  .tip-read-more .arrow { transition: transform 0.25s; display: inline-block; }
+  .tip-read-more.open .arrow { transform: rotate(180deg); }
 
   /* ── QUIZ ── */
   #quiz { background: var(--bg); }
@@ -572,7 +720,7 @@
 <body>
 
 <!-- NAV -->
-<nav>
+<nav role="navigation" aria-label="Main navigation">
   <a class="nav-logo" href="#">The Sleep SOP</a>
   <ul class="nav-links">
     <li><a href="#tips">Research</a></li>
@@ -581,8 +729,9 @@
   </ul>
 </nav>
 
+<main>
 <!-- HERO -->
-<div class="hero">
+<div class="hero" role="banner">
   <div>
     <div class="hero-label">Evidence-based sleep science</div>
     <h1>Sleep <em>better</em>,<br>live longer.</h1>
@@ -628,7 +777,7 @@
 </div>
 
 <!-- TIPS -->
-<section id="tips">
+<section id="tips" aria-label="Science-backed sleep research and tips">
   <div class="section-label" data-num="01">Science-Backed Research</div>
   <h2 class="section-title">What the evidence says</h2>
   <p class="section-sub">Each recommendation below is drawn from peer-reviewed research published in journals including <em>Nature</em>, <em>Sleep</em>, and <em>PNAS</em>.</p>
@@ -638,71 +787,88 @@
       <span class="tip-num">01</span>
       <div class="tip-tag">Circadian Rhythm</div>
       <h3>Anchor your wake time</h3>
-      <p>Rising at the same time every day — even weekends — stabilises your circadian rhythm more effectively than varying bedtime. Consistent wake times regulate cortisol onset and morning alertness.</p>
-      <div class="tip-cite">Walker, M. (2017) · <em>Why We Sleep</em> · NeuroscienceLab</div>
+      <p class="tip-short">Rising at the same time every day — even weekends — stabilises your circadian rhythm more effectively than varying bedtime. Consistent wake times regulate cortisol onset, adenosine clearance, and melatonin timing throughout the day.</p>
+      <div class="tip-long" id="tip1-long">Your circadian rhythm — the internal 24-hour biological clock governing nearly every cell in your body — is primarily set by a consistent wake time, not bedtime. When you wake at the same hour daily, your brain releases cortisol at a predictable time, which in turn anchors adenosine clearance, melatonin onset, and core body temperature fluctuations throughout the day.<br><br>Irregular wake times — common on weekends — create a phenomenon known as "social jetlag," studied extensively by Dr. Till Roenneberg at Ludwig Maximilian University. His research across 65,000 participants showed that even one hour of social jetlag increases obesity risk by 33% and is independently associated with mood disorders, cardiovascular disease, and cognitive impairment. The fix: wake at the same time every day, even after a poor night's sleep, and let sleepiness build naturally to reset the cycle.</div>
+      <button class="tip-read-more" onclick="toggleTip('tip1')" id="tip1-btn">Read more <span class="arrow">↓</span></button>
+      <div class="tip-cite"><span>Roenneberg et al. (2012) · <em>Current Biology</em></span><a href="https://www.cell.com/current-biology/fulltext/S0960-9822(12)00325-9" target="_blank" rel="noopener">View Study →</a></div>
     </div>
 
     <div class="tip-card">
       <span class="tip-num">02</span>
       <div class="tip-tag">Temperature</div>
-      <h3>Cool your bedroom to 18°C</h3>
-      <p>Core body temperature must drop ~1–2°C to initiate sleep. Studies show a bedroom temperature of 65–68°F (18–20°C) significantly reduces sleep onset latency and increases deep sleep duration.</p>
-      <div class="tip-cite">Czeisler et al. (2018) · <em>PNAS</em> · Harvard Medical School</div>
+      <h3>Cool your bedroom to 18°C / 65°F</h3>
+      <p class="tip-short">Core body temperature must drop ~1–2°C to initiate sleep. A bedroom temperature of 18–20°C (65–68°F) significantly reduces sleep onset latency and increases deep sleep duration.</p>
+      <div class="tip-long" id="tip2-long">Sleep onset is triggered not just by darkness or fatigue, but by a mandatory drop in core body temperature of approximately 1–2°C (2–3°F). Your body achieves this by dilating blood vessels in the hands and feet to radiate heat outward — which is why warm extremities are a reliable sign of approaching sleep. If your environment is too warm, this thermoregulatory process is impaired, and sleep onset is delayed or disrupted.<br><br>Research from the University of South Australia and multiple thermoregulation labs consistently identifies 18–20°C (65–68°F) as the optimal bedroom range for adults. A 2019 study by Harding et al. demonstrated that even mild ambient warmth (just 2–3°C above optimal) caused measurable reductions in slow-wave (deep) sleep and next-day memory consolidation. Cooling the room also reduces night wakings — particularly during the second half of the night when REM sleep is concentrated and core body temperature begins rising again.</div>
+      <button class="tip-read-more" onclick="toggleTip('tip2')" id="tip2-btn">Read more <span class="arrow">↓</span></button>
+      <div class="tip-cite"><span>Harding et al. (2019) · <em>Frontiers in Neuroscience</em></span><a href="https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2019.00336/full" target="_blank" rel="noopener">View Study →</a></div>
     </div>
 
     <div class="tip-card">
       <span class="tip-num">03</span>
       <div class="tip-tag">Light Exposure</div>
-      <h3>10 minutes of morning light</h3>
-      <p>Morning light exposure within 30–60 minutes of waking anchors your melatonin rhythm ~16 hours later. Even overcast outdoor light provides 10,000+ lux vs. indoor lighting's 200–500 lux.</p>
-      <div class="tip-cite">Gooley et al. (2011) · <em>J. Clin. Endocrinol.</em></div>
+      <h3>Get 10–30 min of morning sunlight</h3>
+      <p class="tip-short">Morning light exposure within 30–60 minutes of waking anchors your melatonin rhythm ~16 hours later. Even overcast outdoor light provides 10,000+ lux — far more than indoor lighting's 200–500 lux.</p>
+      <div class="tip-long" id="tip3-long">Light is the most powerful external signal for your circadian clock. Specialised retinal cells (ipRGCs) detect short-wavelength blue light and transmit signals directly to the suprachiasmatic nucleus (SCN) — your brain's master clock. This sets the precise timing of melatonin suppression and schedules its onset ~14–16 hours later at night.<br><br>A landmark study by Gooley et al. (2011) found that morning light exposure dramatically shifts melatonin onset earlier the following evening. Even on overcast days, outdoor light delivers 10,000–50,000 lux, compared to just 200–500 lux from typical indoor lighting — meaning sitting near a window is not equivalent to going outside. The protocol: 10–30 minutes outdoors within 60 minutes of waking, without sunglasses.</div>
+      <button class="tip-read-more" onclick="toggleTip('tip3')" id="tip3-btn">Read more <span class="arrow">↓</span></button>
+      <div class="tip-cite"><span>Gooley et al. (2011) · <em>J. Clin. Endocrinol. Metab.</em></span><a href="https://academic.oup.com/jcem/article/96/3/E463/2597236" target="_blank" rel="noopener">View Study →</a></div>
     </div>
 
     <div class="tip-card">
       <span class="tip-num">04</span>
       <div class="tip-tag">Caffeine</div>
-      <h3>Cut caffeine after 1pm</h3>
-      <p>Caffeine's half-life is 5–7 hours. A 3pm coffee still has 50% concentration at 9pm. It blocks adenosine receptors, reducing deep sleep by up to 20% even when you feel like you slept fine.</p>
-      <div class="tip-cite">Landolt et al. (2004) · <em>Sleep</em> · University of Zurich</div>
+      <h3>Cut all caffeine before midday</h3>
+      <p class="tip-short">Caffeine's half-life is 5–7 hours. A 3pm coffee still has 50% concentration at 9pm, blocking adenosine receptors and reducing deep sleep by up to 20% — even when you feel like you slept fine.</p>
+      <div class="tip-long" id="tip4-long">Caffeine works by blocking adenosine receptors in the brain. Adenosine is a sleep-pressure chemical that accumulates from the moment you wake. When caffeine blocks these receptors, it masks — but does not eliminate — this pressure. Once caffeine clears, adenosine floods the receptors simultaneously, causing the characteristic afternoon energy crash.<br><br>Caffeine has a half-life of 5–7 hours in most adults (up to 9–10 hours in some CYP1A2 genetic variants). A 200mg coffee at 3pm still leaves 100mg active at 9pm. Research by Landolt et al. (2004) demonstrated this residual caffeine reduces Stage 3 slow-wave sleep by up to 20% — without the sleeper noticing any subjective difference. The recommended cutoff: midday, or 90mg maximum after noon for sensitive individuals.</div>
+      <button class="tip-read-more" onclick="toggleTip('tip4')" id="tip4-btn">Read more <span class="arrow">↓</span></button>
+      <div class="tip-cite"><span>Landolt et al. (2004) · <em>Neuropsychopharmacology</em></span><a href="https://pubmed.ncbi.nlm.nih.gov/15257305/" target="_blank" rel="noopener">View Study →</a></div>
     </div>
 
     <div class="tip-card">
       <span class="tip-num">05</span>
       <div class="tip-tag">Alcohol</div>
-      <h3>Alcohol fragments REM sleep</h3>
-      <p>Alcohol is sedating but not sleep-inducing. It suppresses REM sleep in the first half of the night and causes rebound wakefulness in the second half, leaving you less restored despite sleeping through the night.</p>
-      <div class="tip-cite">Arnedt et al. (2011) · <em>Sleep Medicine Reviews</em></div>
+      <h3>Alcohol is not a sleep aid</h3>
+      <p class="tip-short">Alcohol is sedating but not sleep-inducing. It suppresses REM sleep in the first half of the night and causes rebound wakefulness in the second half, leaving you less restored despite sleeping through.</p>
+      <div class="tip-long" id="tip5-long">Alcohol is a sedative that induces unconsciousness — but sedation and sleep are neurologically distinct states. Alcohol suppresses REM sleep during the first half of the night by blocking the brain systems that normally generate it. REM sleep is essential for emotional memory processing, creativity, and learning consolidation. The consequence: impaired emotional regulation, reduced problem-solving, and elevated cortisol the next day.<br><br>In the second half of the night, as the liver metabolises the alcohol, a rebound effect occurs: REM pressure surges, causing vivid dreams, night sweats, and frequent awakenings. Even moderate drinking (1–2 standard drinks) measurably degrades sleep architecture. Alcohol also relaxes throat muscles, significantly worsening snoring and sleep apnoea — even in people who do not normally have these conditions.</div>
+      <button class="tip-read-more" onclick="toggleTip('tip5')" id="tip5-btn">Read more <span class="arrow">↓</span></button>
+      <div class="tip-cite"><span>Ebrahim et al. (2013) · <em>Alcoholism: Clinical & Experimental Research</em></span><a href="https://onlinelibrary.wiley.com/doi/10.1111/acer.12006" target="_blank" rel="noopener">View Study →</a></div>
     </div>
 
     <div class="tip-card">
       <span class="tip-num">06</span>
       <div class="tip-tag">Exercise</div>
-      <h3>Exercise, but not too late</h3>
-      <p>Regular moderate exercise increases slow-wave sleep by 65% in studies. However, vigorous exercise within 2 hours of bedtime raises core temperature and delays sleep onset by elevating adrenaline.</p>
-      <div class="tip-cite">Youngstedt et al. (2019) · <em>Sleep Medicine Reviews</em></div>
+      <h3>Exercise improves sleep — timing matters</h3>
+      <p class="tip-short">Regular moderate exercise increases slow-wave sleep by up to 65%. However, vigorous exercise within 2 hours of bedtime raises core temperature and delays sleep onset by elevating adrenaline.</p>
+      <div class="tip-long" id="tip6-long">Regular aerobic exercise is one of the most robust non-pharmacological interventions for sleep quality. A meta-analysis by Kredlow et al. (2015) covering 66 studies found exercise significantly improves sleep onset, total sleep time, efficiency, and slow-wave sleep depth. The mechanisms: exercise raises core body temperature (which then drops more sharply, deepening sleep), increases adenosine accumulation, and reduces cortisol and anxiety.<br><br>However, vigorous exercise within 1–2 hours of bedtime can delay sleep onset by elevating adrenaline, norepinephrine, and heart rate — all alertness signals. Individual responses vary widely. The safest protocol: complete intense workouts at least 2 hours before bed; light stretching or yoga close to bedtime is beneficial rather than harmful.</div>
+      <button class="tip-read-more" onclick="toggleTip('tip6')" id="tip6-btn">Read more <span class="arrow">↓</span></button>
+      <div class="tip-cite"><span>Kredlow et al. (2015) · <em>Journal of Behavioral Medicine</em></span><a href="https://link.springer.com/article/10.1007/s10865-015-9617-6" target="_blank" rel="noopener">View Study →</a></div>
     </div>
 
     <div class="tip-card">
       <span class="tip-num">07</span>
       <div class="tip-tag">Napping</div>
       <h3>The 20-minute nap rule</h3>
-      <p>Naps under 20 minutes restore alertness without entering slow-wave sleep, avoiding "sleep inertia" grogginess. Longer naps are counterproductive for night-time sleep quality.</p>
-      <div class="tip-cite">Mednick et al. (2008) · <em>Sleep</em> · UC San Diego</div>
+      <p class="tip-short">Naps under 20 minutes restore alertness without entering slow-wave sleep, avoiding "sleep inertia" grogginess. Napping after 3pm reduces night-time sleep drive.</p>
+      <div class="tip-long" id="tip7-long">A short nap of 10–20 minutes can restore alertness, reaction time, and working memory to near-rested levels. Brief sleep clears accumulated adenosine locally in key brain regions, allowing the prefrontal cortex to recover. NASA research on military pilots found a 26-minute nap improved performance by 34% and alertness by 100%.<br><br>The critical caveat is duration. Naps exceeding 20–30 minutes enter slow-wave sleep. Waking from this stage causes "sleep inertia" — profound grogginess lasting 30–60 minutes. Naps also spend adenosine sleep drive, reducing night-time sleep quality if taken too late. The evidence-backed protocol: nap before 3pm, set an alarm for 20 minutes, and consider a small coffee immediately before — caffeine kicks in just as you wake (the "nappuccino").</div>
+      <button class="tip-read-more" onclick="toggleTip('tip7')" id="tip7-btn">Read more <span class="arrow">↓</span></button>
+      <div class="tip-cite"><span>Mednick et al. (2003) · <em>Nature Neuroscience</em></span><a href="https://www.nature.com/articles/nn1078" target="_blank" rel="noopener">View Study →</a></div>
     </div>
 
     <div class="tip-card">
       <span class="tip-num">08</span>
-      <div class="tip-tag">Anxiety</div>
-      <h3>Write worries down before bed</h3>
-      <p>A 2018 Baylor University study found that writing a to-do list for the next day — specifically tasks you need to complete — reduced time to fall asleep by 9 minutes, comparable to some sleep medications.</p>
-      <div class="tip-cite">Scullin et al. (2018) · <em>Experimental Brain Research</em></div>
+      <div class="tip-tag">Cognitive Wind-Down</div>
+      <h3>Offload worries before bed</h3>
+      <p class="tip-short">Writing a specific to-do list for the next day before bed reduces time to fall asleep by ~9 minutes. Externalising tasks to paper silences the brain's tendency to ruminate on unfinished work.</p>
+      <div class="tip-long" id="tip8-long">Pre-sleep cognitive arousal — racing thoughts, worry, mental rehearsal — is one of the leading causes of sleep onset insomnia. The prefrontal cortex remains hyperactive at bedtime because the brain interprets "unfinished tasks" as threats. The result: elevated cortisol and norepinephrine at a time when both should be declining.<br><br>A 2018 randomised controlled study by Scullin et al. at Baylor University found that spending 5 minutes writing a to-do list of upcoming tasks — rather than journaling about the day — reduced sleep onset latency by an average of 9 minutes. The more specific the list, the greater the benefit. The mechanism: externalising tasks satisfies the brain's "Zeigarnik effect," allowing the prefrontal cortex to disengage. This is a core component of Cognitive Behavioural Therapy for Insomnia (CBT-I).</div>
+      <button class="tip-read-more" onclick="toggleTip('tip8')" id="tip8-btn">Read more <span class="arrow">↓</span></button>
+      <div class="tip-cite"><span>Scullin et al. (2018) · <em>Journal of Experimental Psychology: General</em></span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5758411/" target="_blank" rel="noopener">View Study →</a></div>
     </div>
 
+  </div>
   </div>
 </section>
 
 <!-- QUIZ -->
-<section id="quiz">
+<section id="quiz" aria-label="Sleep quality assessment quiz">
   <div class="section-label" data-num="02">Sleep Quality Assessment</div>
   <h2 class="section-title">How well do you sleep?</h2>
   <p class="section-sub">Answer 5 quick questions and get a personalised, evidence-based sleep score with targeted recommendations.</p>
@@ -797,7 +963,7 @@
 </section>
 
 <!-- NEWSLETTER -->
-<section id="newsletter">
+<section id="newsletter" aria-label="Newsletter signup">
   <div class="section-label" data-num="03">Stay Informed</div>
   <h2 class="section-title">Get the latest<br>sleep science.</h2>
   <p class="section-sub">Join the list for evidence-based sleep insights delivered to your inbox. No fluff. Unsubscribe anytime.</p>
@@ -810,12 +976,26 @@
   <p class="nl-error" id="nl-error">Something went wrong. Please try again.</p>
 </section>
 
-<footer>
+</main>
+
+<footer role="contentinfo">
   <span>© 2026 The Sleep SOP</span>
   <span>Science-backed sleep improvement</span>
 </footer>
 
 <script>
+
+  function toggleTip(id) {
+    const long = document.getElementById(id + '-long');
+    const btn  = document.getElementById(id + '-btn');
+    const isOpen = long.classList.contains('open');
+    long.classList.toggle('open', !isOpen);
+    btn.classList.toggle('open', !isOpen);
+    btn.innerHTML = isOpen
+      ? 'Read more <span class="arrow">↓</span>'
+      : 'Read less <span class="arrow" style="transform:rotate(180deg)">↓</span>';
+  }
+
   // Live time
   function updateTime() {
     const now = new Date();
@@ -931,7 +1111,6 @@
   }
 
   // Newsletter
-  // Newsletter — Formspree
   const FORMSPREE_ID = "mzdaqopv";
 
   document.getElementById('nl-form').addEventListener('submit', async (e) => {
