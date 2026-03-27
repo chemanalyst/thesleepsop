@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3RJCMCWJ3B"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-3RJCMCWJ3B');
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -61,11 +52,7 @@
       "@type": "Organization",
       "@id": "https://www.thesleepsop.com/#organization",
       "name": "The Sleep SOP",
-      "url": "https://www.thesleepsop.com/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.thesleepsop.com/logo.png"
-      }
+      "url": "https://www.thesleepsop.com/"
     },
     {
       "@type": "WebPage",
@@ -75,13 +62,15 @@
       "description": "Evidence-based sleep tips backed by peer-reviewed research. Discover what actually improves sleep quality.",
       "isPartOf": { "@id": "https://www.thesleepsop.com/#website" },
       "about": {
-        "@type": "MedicalWebPage",
-        "name": "Sleep Health and Sleep Hygiene",
-        "medicalAudience": "Patient"
+        "@type": "Thing",
+        "name": "Sleep Health and Sleep Hygiene"
       }
     },
     {
       "@type": "FAQPage",
+      "@id": "https://www.thesleepsop.com/#faqpage",
+      "url": "https://www.thesleepsop.com/",
+      "isPartOf": { "@id": "https://www.thesleepsop.com/#webpage" },
       "mainEntity": [
         {
           "@type": "Question",
@@ -121,6 +110,22 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Waking at the same time every day — including weekends — is the single most effective way to stabilise your circadian rhythm and improve sleep quality."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does melatonin actually work for sleep?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Melatonin works well for shifting your body clock — jet lag, shift work, and delayed sleep phase. It works poorly for improving general sleep quality. The evidence-backed dose is 0.5–1mg, far below the 3–10mg found in most pharmacy tablets."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does exercise improve sleep quality?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Regular aerobic exercise increases slow-wave deep sleep by up to 65%. However, vigorous exercise within 2 hours of bedtime can delay sleep onset by elevating adrenaline and core body temperature."
           }
         }
       ]
@@ -452,6 +457,147 @@
   .tip-read-more:hover { color: var(--accent-mid); border-color: var(--accent-mid); }
   .tip-read-more .arrow { transition: transform 0.25s; display: inline-block; }
   .tip-read-more.open .arrow { transform: rotate(180deg); }
+
+  /* ── MELATONIN SECTION ── */
+  #melatonin { background: var(--surface); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .mel-intro {
+    max-width: 720px;
+    font-size: 1rem;
+    color: var(--ink-muted);
+    line-height: 1.85;
+    font-weight: 300;
+    margin-bottom: 3rem;
+  }
+  .mel-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-bottom: 2.4rem;
+  }
+  .mel-col {
+    background: var(--surface);
+    padding: 2rem;
+  }
+  .mel-col-header {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1.4rem;
+  }
+  .mel-col-icon {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+  .mel-col-icon.pro { background: #D6EFD6; color: #2A6B2A; }
+  .mel-col-icon.con { background: #FAE0D6; color: #8B3A1A; }
+  .mel-col-title {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .mel-col-title.pro { color: #2A6B2A; }
+  .mel-col-title.con { color: #8B3A1A; }
+  .mel-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .mel-list li {
+    font-size: 0.88rem;
+    color: var(--ink);
+    line-height: 1.75;
+    font-weight: 300;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+  .mel-list li::before {
+    position: absolute; left: 0; top: 0;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+  }
+  .mel-list.pro li::before { content: '+'; color: #2A6B2A; }
+  .mel-list.con li::before { content: '−'; color: #8B3A1A; }
+  .mel-list li strong { font-weight: 500; color: var(--ink); }
+  .mel-verdict {
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent);
+    padding: 1.6rem 2rem;
+    max-width: 720px;
+    margin-bottom: 1.6rem;
+  }
+  .mel-verdict-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-mid);
+    margin-bottom: 0.6rem;
+  }
+  .mel-verdict p {
+    font-size: 0.92rem;
+    color: var(--ink);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+  .mel-dosage {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    max-width: 720px;
+    margin-bottom: 2rem;
+  }
+  .mel-dosage-item {
+    background: var(--surface);
+    padding: 1.2rem 1.4rem;
+  }
+  .mel-dosage-num {
+    font-family: var(--mono);
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+  .mel-dosage-desc {
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+  .mel-cite {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--accent-mid);
+    letter-spacing: 0.05em;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--rule);
+    padding-top: 1.2rem;
+  }
+  .mel-cite a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-light);
+    padding-bottom: 1px;
+    transition: color 0.2s;
+  }
+  .mel-cite a:hover { color: var(--accent-mid); }
+  @media (max-width: 768px) {
+    .mel-grid { grid-template-columns: 1fr; }
+    .mel-dosage { grid-template-columns: 1fr; }
+  }
 
   /* ── QUIZ ── */
   #quiz { background: var(--bg); }
@@ -876,9 +1022,33 @@
   </div>
 </section>
 
+
+<!-- MELATONIN TEASER -->
+<section id="melatonin" aria-label="In Focus: Melatonin" style="background: var(--surface); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
+  <div class="section-label" data-num="02">In Focus</div>
+  <h2 class="section-title">Is melatonin worth taking?</h2>
+  <p class="section-sub">It's the world's most popular sleep aid — but the evidence is more nuanced than the label suggests. We break down the pros, cons, and what most people get wrong about dosing.</p>
+  <div style="max-width: 680px; background: var(--bg); border: 1px solid var(--rule); border-left: 4px solid var(--accent); padding: 2rem;">
+    <div style="font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-mid); margin-bottom: 1rem;">What you'll find in the full article</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem 2rem; margin-bottom: 1.6rem;">
+      <div style="font-size: 0.85rem; color: var(--ink); font-weight: 300; padding-left: 1rem; position: relative;"><span style="position:absolute;left:0;color:#2A6B2A;font-family:var(--mono);">+</span> Effective for jet lag & circadian shifts</div>
+      <div style="font-size: 0.85rem; color: var(--ink); font-weight: 300; padding-left: 1rem; position: relative;"><span style="position:absolute;left:0;color:#8B3A1A;font-family:var(--mono);">−</span> Weak evidence for general insomnia</div>
+      <div style="font-size: 0.85rem; color: var(--ink); font-weight: 300; padding-left: 1rem; position: relative;"><span style="position:absolute;left:0;color:#2A6B2A;font-family:var(--mono);">+</span> Non-habit forming</div>
+      <div style="font-size: 0.85rem; color: var(--ink); font-weight: 300; padding-left: 1rem; position: relative;"><span style="position:absolute;left:0;color:#8B3A1A;font-family:var(--mono);">−</span> Most people take 10–20× too much</div>
+      <div style="font-size: 0.85rem; color: var(--ink); font-weight: 300; padding-left: 1rem; position: relative;"><span style="position:absolute;left:0;color:#2A6B2A;font-family:var(--mono);">+</span> Useful for delayed sleep phase</div>
+      <div style="font-size: 0.85rem; color: var(--ink); font-weight: 300; padding-left: 1rem; position: relative;"><span style="position:absolute;left:0;color:#8B3A1A;font-family:var(--mono);">−</span> Label accuracy is poor</div>
+    </div>
+    <a href="melatonin.html" style="display: inline-flex; align-items: center; gap: 0.6rem; background: var(--accent); color: #fff; padding: 0.8rem 1.6rem; font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.2s;">
+      Read the full article
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+
 <!-- QUIZ -->
 <section id="quiz" aria-label="Sleep quality assessment quiz">
-  <div class="section-label" data-num="02">Sleep Quality Assessment</div>
+  <div class="section-label" data-num="03">Sleep Quality Assessment</div>
   <h2 class="section-title">How well do you sleep?</h2>
   <p class="section-sub">Answer 5 quick questions and get a personalised, evidence-based sleep score with targeted recommendations.</p>
   <div class="quiz-wrapper">
@@ -973,7 +1143,7 @@
 
 <!-- NEWSLETTER -->
 <section id="newsletter" aria-label="Newsletter signup">
-  <div class="section-label" data-num="03">Stay Informed</div>
+  <div class="section-label" data-num="04">Stay Informed</div>
   <h2 class="section-title">Get the latest<br>sleep science.</h2>
   <p class="section-sub">Join the list for evidence-based sleep insights delivered to your inbox. No fluff. Unsubscribe anytime.</p>
   <form class="nl-form" id="nl-form">
