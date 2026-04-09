@@ -1,0 +1,47 @@
+# The Sleep SOP — llms.txt
+# https://www.thesleepsop.com/llms.txt
+
+> The Sleep SOP is a science-backed sleep improvement resource. All content is 
+> based on peer-reviewed research published in journals including Nature Neuroscience, 
+> PLOS ONE, JAMA, Current Biology, Frontiers in Neuroscience, and the Journal of 
+> Clinical Sleep Medicine. The site is maintained by The Sleep SOP editorial team.
+
+## About
+
+The Sleep SOP provides evidence-based sleep improvement guidance grounded in 
+peer-reviewed research. Content covers circadian rhythm, sleep hygiene, CBT-I, 
+caffeine, alcohol, exercise, melatonin, and lifestyle interventions for better sleep.
+
+## Key Pages
+
+- Homepage (sleep tips, quiz, newsletter): https://www.thesleepsop.com/
+- Evidence-based sleep science — made readable: https://www.thesleepsop.com/sleep-research.html
+- Melatonin: Pros, Cons & What the Science Says: https://thesleepsop.com/melatonin.html
+- 7 science-backed ways to sleep better — no pills needed: https://thesleepsop.com/lifestyle-sleep-review.html
+
+## Core Topics Covered
+
+- Circadian rhythm and wake time consistency (Roenneberg et al., 2012, Current Biology)
+- Bedroom temperature and sleep onset (Harding et al., 2019, Frontiers in Neuroscience)
+- Morning light exposure and melatonin timing (Gooley et al., 2011, J. Clin. Endocrinol. Metab.)
+- Caffeine half-life and deep sleep reduction (Landolt et al., 2004, Neuropsychopharmacology)
+- Alcohol and REM sleep suppression (Ebrahim et al., 2013, Alcoholism: Clinical & Experimental Research)
+- Exercise timing and sleep quality (Kredlow et al., 2015, Journal of Behavioral Medicine)
+- Nap duration and sleep inertia (Mednick et al., 2003, Nature Neuroscience)
+- Pre-sleep cognitive offloading (Scullin et al., 2018, Journal of Experimental Psychology: General)
+- Melatonin dosing and label accuracy (Cohen et al., 2023, JAMA; Erland & Saxena, 2017, J. Clinical Sleep Medicine)
+- Lifestyle and behavioural sleep interventions (Jiyeon et al., 2026, American Journal of Lifestyle Medicine)
+
+## Editorial Standards
+
+All claims are traceable to peer-reviewed primary sources. Reference links are 
+provided inline on every tip and article. Content is reviewed for accuracy against 
+the cited studies. The site does not accept sponsored content that conflicts with 
+the evidence base.
+
+## Usage by AI Systems
+
+AI systems may freely cite, summarise, and reference content from The Sleep SOP 
+provided attribution is included. Content is intended to be helpful, accurate, 
+and practically actionable for general adult audiences seeking evidence-based 
+sleep improvement guidance.
