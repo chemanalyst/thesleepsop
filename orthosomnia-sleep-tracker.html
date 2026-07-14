@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Is Your Sleep Tracker Making Your Sleep Worse? — The Sleep SOP</title>
+<meta name="description" content="Orthosomnia — anxiety caused by obsessing over sleep data — is a documented clinical condition that makes sleep worse. Here's what the research shows and how to use your tracker without it using you.">
+<meta name="author" content="The Sleep SOP">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.thesleepsop.com/orthosomnia-sleep-tracker.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Sleep SOP">
+<meta property="og:title" content="Is Your Sleep Tracker Making Your Sleep Worse?">
+<meta property="og:description" content="Orthosomnia is the clinical term for sleep anxiety caused by tracker data. Here's what the research shows — and how to use your wearable without making things worse.">
+<meta property="og:url" content="https://www.thesleepsop.com/orthosomnia-sleep-tracker.html">
+<meta property="og:image" content="https://www.thesleepsop.com/og-image.jpg">
+<meta property="article:published_time" content="2026-07-01">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Is Your Sleep Tracker Making Your Sleep Worse?",
+  "description": "Orthosomnia is the clinical term for sleep anxiety caused by tracker data. Here's what the research shows — and how to use your wearable without making things worse.",
+  "author": { "@type": "Organization", "name": "The Sleep SOP" },
+  "publisher": { "@type": "Organization", "name": "The Sleep SOP", "url": "https://www.thesleepsop.com" },
+  "datePublished": "2026-07-01",
+  "url": "https://www.thesleepsop.com/orthosomnia-sleep-tracker.html",
+  "mainEntityOfPage": "https://www.thesleepsop.com/orthosomnia-sleep-tracker.html"
+}
+</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F319;</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #F4F2EE; --surface: #FFFFFF; --ink: #0D0D0D;
+    --ink-muted: #6B6861; --accent: #1A3A5C; --accent-light: #D6E4F0;
+    --accent-mid: #4A7FA8; --rule: #DDDBD5; --tag-bg: #EBF3F9;
+    --mono: 'DM Mono', monospace; --serif: 'DM Serif Display', serif;
+    --sans: 'Instrument Sans', sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  /* NAV */
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(244,242,238,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--rule); display: flex; align-items: center; justify-content: space-between; padding: 0 5vw; height: 60px; }
+  .nav-logo { font-family: var(--mono); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); text-decoration: none; }
+  .nav-back { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); text-decoration: none; display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s; }
+  .nav-back:hover { color: var(--accent); }
+
+  /* HERO */
+  .article-hero { padding: 4rem 5vw 3rem; border-bottom: 1px solid var(--rule); background: var(--surface); }
+  .article-hero-inner { max-width: 720px; }
+  .article-tag { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-mid); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.2rem; }
+  .article-tag::before { content: ''; display: inline-block; width: 20px; height: 1px; background: var(--accent-mid); }
+  .article-hero h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.15; margin-bottom: 1.2rem; }
+  .article-hero h1 em { font-style: italic; color: var(--accent); }
+  .article-deck { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.8; font-weight: 300; max-width: 620px; margin-bottom: 1.8rem; }
+  .article-meta { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; color: var(--ink-muted); display: flex; gap: 1.5rem; flex-wrap: wrap; padding-top: 1.2rem; border-top: 1px solid var(--rule); }
+
+  /* LAYOUT */
+  .article-body { padding: 3rem 5vw 5rem; display: grid; grid-template-columns: 1fr 260px; gap: 4rem; max-width: 1100px; }
+  .article-content { max-width: 680px; }
+  .article-sidebar { padding-top: 0.5rem; }
+
+  /* CONTENT STYLES */
+  .article-content h2 { font-family: var(--serif); font-size: 1.7rem; margin: 2.4rem 0 0.8rem; line-height: 1.25; }
+  .article-content h3 { font-family: var(--sans); font-size: 1rem; font-weight: 600; letter-spacing: 0.02em; margin: 1.6rem 0 0.5rem; color: var(--ink); }
+  .article-content p { font-size: 0.95rem; color: var(--ink-muted); line-height: 1.85; font-weight: 300; margin-bottom: 1.1rem; }
+  .article-content strong { color: var(--ink); font-weight: 500; }
+  .article-content em { font-style: italic; }
+
+  /* PROS CONS */
+  .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2rem 0; }
+  .pc-col { background: var(--surface); padding: 1.6rem; }
+  .pc-header { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1.2rem; }
+  .pc-icon { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 0.75rem; font-weight: 600; flex-shrink: 0; }
+  .pc-icon.pro { background: #D6EFD6; color: #2A6B2A; }
+  .pc-icon.con { background: #FAE0D6; color: #8B3A1A; }
+  .pc-title { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; }
+  .pc-title.pro { color: #2A6B2A; }
+  .pc-title.con { color: #8B3A1A; }
+  .pc-list { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
+  .pc-list li { font-size: 0.87rem; color: var(--ink); line-height: 1.7; font-weight: 300; padding-left: 1.1rem; position: relative; }
+  .pc-list li::before { position: absolute; left: 0; font-family: var(--mono); font-size: 0.75rem; }
+  .pc-list.pro li::before { content: '+'; color: #2A6B2A; }
+  .pc-list.con li::before { content: '−'; color: #8B3A1A; }
+  .pc-list li strong { font-weight: 500; }
+
+  /* DOSAGE TABLE */
+  .dosage-table { border: 1px solid var(--rule); background: var(--surface); margin: 2rem 0; overflow: hidden; }
+  .dosage-row { display: grid; grid-template-columns: 130px 1fr; border-bottom: 1px solid var(--rule); }
+  .dosage-row:last-child { border-bottom: none; }
+  .dosage-num { background: var(--accent); color: #fff; padding: 1rem 1.2rem; font-family: var(--mono); font-size: 1rem; font-weight: 500; display: flex; align-items: center; }
+  .dosage-desc { padding: 1rem 1.2rem; font-size: 0.87rem; color: var(--ink-muted); line-height: 1.6; font-weight: 300; display: flex; align-items: center; }
+
+  /* VERDICT */
+  .verdict { background: var(--tag-bg); border-left: 4px solid var(--accent); padding: 1.6rem 1.8rem; margin: 2.2rem 0; }
+  .verdict-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-mid); margin-bottom: 0.7rem; }
+  .verdict p { font-size: 0.93rem; color: var(--ink); line-height: 1.85; font-weight: 300; margin: 0; }
+
+  /* REFERENCES */
+  .references { margin-top: 2.4rem; padding-top: 1.4rem; border-top: 1px solid var(--rule); }
+  .references-label { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-mid); margin-bottom: 0.8rem; }
+  .references ol { padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .references li { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-muted); line-height: 1.6; letter-spacing: 0.02em; }
+  .references a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-light); }
+  .references a:hover { color: var(--accent-mid); }
+
+  /* SIDEBAR */
+  .sidebar-card { background: var(--surface); border: 1px solid var(--rule); padding: 1.4rem; margin-bottom: 1.2rem; }
+  .sidebar-card-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-mid); margin-bottom: 0.8rem; }
+  .sidebar-card p { font-size: 0.82rem; color: var(--ink-muted); line-height: 1.7; font-weight: 300; margin-bottom: 0.8rem; }
+  .sidebar-cta { display: block; background: var(--accent); color: #fff; text-align: center; padding: 0.7rem 1rem; font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; margin-top: 0.6rem; }
+  .sidebar-cta:hover { background: #122840; }
+  .sidebar-stat { display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.6rem; }
+  .sidebar-stat-num { font-family: var(--mono); font-size: 1.3rem; color: var(--accent); font-weight: 500; }
+  .sidebar-stat-desc { font-size: 0.75rem; color: var(--ink-muted); font-weight: 300; line-height: 1.4; }
+
+  /* FOOTER */
+  footer { border-top: 1px solid var(--rule); background: var(--accent); padding: 1.4rem 5vw; display: flex; align-items: center; justify-content: space-between; }
+  footer span { font-family: var(--mono); font-size: 0.65rem; color: rgba(255,255,255,0.35); letter-spacing: 0.08em; text-transform: uppercase; }
+
+  @media (max-width: 768px) {
+    .article-body { grid-template-columns: 1fr; }
+    .article-sidebar { display: none; }
+    .pros-cons { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">The Sleep SOP</a>
+  <a class="nav-back" href="sleep-research.html">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M12 7H2M7 12l-5-5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    All articles
+  </a>
+</nav>
+<div class="article-hero">
+  <div class="article-hero-inner">
+    <div class="article-tag">In Focus · Sleep Technology</div>
+    <h1>Is your sleep tracker<br><em>making your sleep worse?</em></h1>
+    <p class="article-deck">You bought a tracker to improve your sleep. Now you lie awake worrying about your score. There's a clinical name for this — and the research shows it's more common than you think.</p>
+    <div class="article-meta">
+      <span>The Sleep SOP</span>
+      <time datetime="2026-07-01">07/2026</time>
+      <span>3 min read</span>
+      <span>4 peer-reviewed sources</span>
+    </div>
+  </div>
+</div>
+<div class="article-body">
+<div class="article-content">
+
+  <div class="tldr">
+    <div class="tldr-label">TL;DR — The short version</div>
+    <ul>
+      <li>Orthosomnia is the clinical term for anxiety caused by obsessing over sleep tracker data — and it makes sleep worse, not better</li>
+      <li>A 2024 study found 3–14% of wearable users show signs of orthosomnia — and those people score significantly higher on insomnia scales</li>
+      <li>Consumer wearables infer sleep stages from movement and heart rate — they don't measure brain waves.</li>
+      <li>The fix is not to throw your tracker away — it's to change how you use the data</li>
+      <li>Use your tracker for weekly trends, not nightly scores. One bad night means nothing</li>
+    </ul>
+  </div>
+
+  <h2>The irony you probably recognise</h2>
+  <p>You bought a sleep tracker to improve your sleep. Now you lie awake at midnight worrying that your tracker is about to record a bad night — and by worrying, you guarantee it does. The tool meant to help has become the problem.</p>
+  <p>This is not a quirk. Sleep researchers have given it a name: <strong>orthosomnia</strong> — from the Greek <em>ortho</em> (correct or straight) and <em>somnia</em> (sleep). It was first described clinically in the <em>Journal of Clinical Sleep Medicine</em>, and in the years since, the evidence that it's a real and growing problem has accumulated.</p>
+
+  <h2>What the research shows</h2>
+  <p>A 2024 cross-sectional study published in <em>Brain Sciences</em> surveyed 523 adults and found that between 3% and 14% showed signs of orthosomnia, depending on how strictly it was defined. Among people who owned and regularly used a sleep-tracking wearable (35.8% of the sample), those identified with orthosomnia consistently scored higher on the Athens Insomnia Scale — meaning their sleep was measurably worse. Tracker anxiety was not just a feeling; it was linked to real, worse sleep outcomes.</p>
+  <p>A 2026 nationally representative survey presented at the SLEEP annual meeting found similar patterns in the US population, with a meaningful proportion of tracker users reporting that their device made them more anxious about their sleep rather than less.</p>
+  <p>The age gap is striking too. Around 23% of users aged 18–35 said sleep apps made them stressed about their sleep, compared with just 2.4% of those 66 and older. Younger, perfectionist, high-achieving people appear to be most at risk — if you seek excellence in every area of life, sleep metrics become another thing to optimise, and a bad score becomes a personal failure.</p>
+
+  <h2>The accuracy problem nobody talks about</h2>
+  <p>Here is the part that should genuinely reassure you: your sleep tracker is probably wrong.</p>
+  <p>No consumer wearable directly measures sleep. They infer it from movement, heart rate, and sometimes skin temperature. They're reasonably good at telling sleep from wake — but the stage breakdowns that people fixate on (deep sleep, REM, light sleep) are far less reliable. Two devices worn simultaneously on the same wrist could routinely disagree significantly on the same night.</p>
+  <p>Even trained human sleep technicians scoring the same raw EEG data only agree about 80% of the time. The "you got 31 minutes of deep sleep" verdict that ruins your morning may be wrong by more than the number itself.</p>
+
+  <h2>Why it happens — the anxiety feedback loop</h2>
+  <p>Sleep is one of the few biological processes that gets worse the harder you try. The moment you lie in bed consciously trying to fall asleep — monitoring yourself, checking whether it's working, worrying about the score — you activate exactly the kind of mental arousal that prevents sleep. Your body needs to feel safe and relaxed to transition into sleep. Anxiety about sleep scores creates the opposite state.</p>
+  <p>This is also why CBT-I (Cognitive Behavioural Therapy for Insomnia) — the most evidence-backed treatment for chronic insomnia — specifically targets sleep-related anxiety and the unhelpful beliefs and behaviours that perpetuate it. Orthosomnia is essentially CBT-I's next frontier: a new source of sleep anxiety created by technology.</p>
+
+  <div class="pros-cons">
+    <div class="pc-col">
+      <div class="pc-header"><div class="pc-icon pro">+</div><span class="pc-title pro">When trackers genuinely help</span></div>
+      <ul class="pc-list pro">
+        <li>Spotting long-term patterns — consistently low sleep scores over weeks may warrant a doctor visit</li>
+        <li>Motivation to prioritise sleep — seeing the data can push people to go to bed earlier</li>
+        <li>Identifying obvious culprits — alcohol, late caffeine, or irregular schedules show up clearly in trends</li>
+        <li>77% of tracker users in one AASM survey found their device helpful overall</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <div class="pc-header"><div class="pc-icon con">−</div><span class="pc-title con">When they cause harm</span></div>
+      <ul class="pc-list con">
+        <li>Checking your score first thing every morning — letting a number set your mood for the day</li>
+        <li>Going to bed earlier or spending more time in bed to improve metrics — this actually worsens sleep quality</li>
+        <li>Feeling anxious about a single bad night — which creates arousal that causes more bad nights</li>
+        <li>Trusting stage breakdowns as precise facts — they're estimates with significant error margins</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>How to use a tracker without it using you</h2>
+  <p><strong>Look at the weekly average, not the nightly score.</strong> One night of 5 hours is not a crisis. A week of 5 hours is worth paying attention to. Zoom out.</p>
+  <p><strong>Stop checking first thing in the morning.</strong> Your subjective feeling of how you slept is actually a better predictor of your daytime performance than any tracker score. If you woke up feeling okay, you probably are okay — regardless of what the app says.</p>
+  <p><strong>Turn off sleep score notifications.</strong> Most apps allow this. You can still access the data when you want it, without it being pushed at you as a morning verdict.</p>
+  <p><strong>If your tracker is making you anxious — put it away for a while.</strong> Return to the basics: consistent wake time, dark room, no caffeine after midday. See how you feel without the data.</p>
+
+  <div class="verdict">
+    <div class="verdict-label">Bottom line</div>
+    <p>Sleep trackers are useful tools that most people benefit from — but a meaningful minority develop orthosomnia, where anxiety about the data makes sleep worse. The problem is not the technology; it's how the data is presented and how we respond to it. Use your tracker to spot trends over weeks, not to grade individual nights. If checking your sleep score makes you feel worse, that's your cue to take a break from the data.</p>
+  </div>
+
+  <div class="references">
+    <div class="references-label">References</div>
+    <ol>
+      <li>Jahrami H. et al. (2023). The Tale of Orthosomnia: I Am so Good at Sleeping that I Can Do It with My Eyes Closed and My Fitness Tracker on Me. <em>Nature and Science of Sleep</em>, 15, 13–15. DOI: 10.2147/NSS.S402694. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9875581/" target="_blank" rel="noopener">View on PMC &#x2192;</a></li>
+      <li>Pallesen S. et al. (2024). Prevalence of Orthosomnia in a General Population Sample: A Cross-Sectional Study. <em>Brain Sciences</em>. PMC11592250. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11592250/" target="_blank" rel="noopener">View on PMC &#x2192;</a></li>
+      <li>Goel R. et al. (2026). Exploring the Prevalence of Sleep Tracking and Orthosomnia in a National Survey of Adults in the US. <em>SLEEP</em>, 49(Suppl 1), A246. DOI: 10.1093/sleep/zsag091.0552. <a href="https://academic.oup.com/sleep/article/49/Supplement_1/A246/8674102" target="_blank" rel="noopener">View &#x2192;</a></li>
+      <li>Baron K.G. et al. (2017). Orthosomnia: Are Some Patients Taking the Quantified Self Too Far? <em>Journal of Clinical Sleep Medicine</em>, 13(2), 351–354. DOI: 10.5664/jcsm.6472. <a href="https://link.springer.com/article/10.5664/jcsm.6472" target="_blank" rel="noopener">View on PubMed &#x2192;</a></li>
+      <li>Lundekvam Berge H. et al. (2026). Sleep in the age of technology: the use of sleep apps and perceived impact on sleep and sleep habits. <em>Front. Psychol.</em> 17:1726473 <a href="https://doi.org/10.3389/fpsyg.2026.1726473" target="_blank" rel="noopener">View  &#x2192;</a></li>
+</ol>
+  </div>
+</div>
+
+<aside class="article-sidebar">
+  <div class="sidebar-card">
+    <div class="sidebar-card-label">Key numbers</div>
+    <div class="sidebar-stat"><span class="sidebar-stat-num">3–14%</span><span class="sidebar-stat-desc">of wearable users show orthosomnia signs</span></div>
+    <div class="sidebar-stat"><span class="sidebar-stat-num">23%</span><span class="sidebar-stat-desc">of 18–35 year olds say sleep apps increase their stress</span></div>
+  </div>
+  <div class="sidebar-card">
+    <div class="sidebar-card-label">Related reading</div>
+    <a class="sidebar-cta" href="ai-sleep.html">How AI is changing sleep diagnosis &#x2192;</a>
+    <a class="sidebar-cta" href="lifestyle-sleep-review.html" style="display:block;margin-top:0.5rem;">7 ways to sleep better &#x2192;</a>
+  </div>
+  <div class="sidebar-card">
+    <div class="sidebar-card-label">How well do you sleep?</div>
+    <p>Take our free 5-question quiz.</p>
+    <a class="sidebar-cta" href="index.html#quiz">Take the quiz &#x2192;</a>
+  </div>
+</aside>
+</div>
+<footer role="contentinfo">
+  <span>&#169; 2026 The Sleep SOP</span>
+  <span style="display:flex;gap:1.5rem;align-items:center;">
+    <a href="about.html" style="color:rgba(255,255,255,0.4);font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;">About</a>
+    <a href="sleep-research.html" style="color:rgba(255,255,255,0.4);font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;">Research</a>
+    <a href="privacy-policy.html" style="color:rgba(255,255,255,0.4);font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;">Privacy</a>
+    <a href="contact.html" style="color:rgba(255,255,255,0.4);font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;">Contact</a>
+  </span>
+</footer>
+</body>
+</html>
