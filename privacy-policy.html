@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — The Sleep SOP</title>
+<meta name="description" content="Privacy policy for The Sleep SOP — how we collect, use, and protect your data, including cookies, analytics, and advertising.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.thesleepsop.com/privacy-policy.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F319;</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #F4F2EE; --surface: #FFFFFF; --ink: #0D0D0D;
+    --ink-muted: #6B6861; --accent: #1A3A5C; --accent-light: #D6E4F0;
+    --accent-mid: #4A7FA8; --rule: #DDDBD5; --tag-bg: #EBF3F9;
+    --mono: 'DM Mono', monospace; --serif: 'DM Serif Display', serif;
+    --sans: 'Instrument Sans', sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  /* NAV */
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(244,242,238,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--rule); display: flex; align-items: center; justify-content: space-between; padding: 0 5vw; height: 60px; }
+  .nav-logo { font-family: var(--mono); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); text-decoration: none; }
+  .nav-back { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); text-decoration: none; display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s; }
+  .nav-back:hover { color: var(--accent); }
+
+  /* HERO */
+  .article-hero { padding: 4rem 5vw 3rem; border-bottom: 1px solid var(--rule); background: var(--surface); }
+  .article-hero-inner { max-width: 720px; }
+  .article-tag { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-mid); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.2rem; }
+  .article-tag::before { content: ''; display: inline-block; width: 20px; height: 1px; background: var(--accent-mid); }
+  .article-hero h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.15; margin-bottom: 1.2rem; }
+  .article-hero h1 em { font-style: italic; color: var(--accent); }
+  .article-deck { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.8; font-weight: 300; max-width: 620px; margin-bottom: 1.8rem; }
+  .article-meta { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; color: var(--ink-muted); display: flex; gap: 1.5rem; flex-wrap: wrap; padding-top: 1.2rem; border-top: 1px solid var(--rule); }
+
+  /* LAYOUT */
+  .article-body { padding: 3rem 5vw 5rem; display: grid; grid-template-columns: 1fr 260px; gap: 4rem; max-width: 1100px; }
+  .article-content { max-width: 680px; }
+  .article-sidebar { padding-top: 0.5rem; }
+
+  /* CONTENT STYLES */
+  .article-content h2 { font-family: var(--serif); font-size: 1.7rem; margin: 2.4rem 0 0.8rem; line-height: 1.25; }
+  .article-content h3 { font-family: var(--sans); font-size: 1rem; font-weight: 600; letter-spacing: 0.02em; margin: 1.6rem 0 0.5rem; color: var(--ink); }
+  .article-content p { font-size: 0.95rem; color: var(--ink-muted); line-height: 1.85; font-weight: 300; margin-bottom: 1.1rem; }
+  .article-content strong { color: var(--ink); font-weight: 500; }
+  .article-content em { font-style: italic; }
+
+  /* PROS CONS */
+  .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 2rem 0; }
+  .pc-col { background: var(--surface); padding: 1.6rem; }
+  .pc-header { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1.2rem; }
+  .pc-icon { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 0.75rem; font-weight: 600; flex-shrink: 0; }
+  .pc-icon.pro { background: #D6EFD6; color: #2A6B2A; }
+  .pc-icon.con { background: #FAE0D6; color: #8B3A1A; }
+  .pc-title { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; }
+  .pc-title.pro { color: #2A6B2A; }
+  .pc-title.con { color: #8B3A1A; }
+  .pc-list { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
+  .pc-list li { font-size: 0.87rem; color: var(--ink); line-height: 1.7; font-weight: 300; padding-left: 1.1rem; position: relative; }
+  .pc-list li::before { position: absolute; left: 0; font-family: var(--mono); font-size: 0.75rem; }
+  .pc-list.pro li::before { content: '+'; color: #2A6B2A; }
+  .pc-list.con li::before { content: '−'; color: #8B3A1A; }
+  .pc-list li strong { font-weight: 500; }
+
+  /* DOSAGE TABLE */
+  .dosage-table { border: 1px solid var(--rule); background: var(--surface); margin: 2rem 0; overflow: hidden; }
+  .dosage-row { display: grid; grid-template-columns: 130px 1fr; border-bottom: 1px solid var(--rule); }
+  .dosage-row:last-child { border-bottom: none; }
+  .dosage-num { background: var(--accent); color: #fff; padding: 1rem 1.2rem; font-family: var(--mono); font-size: 1rem; font-weight: 500; display: flex; align-items: center; }
+  .dosage-desc { padding: 1rem 1.2rem; font-size: 0.87rem; color: var(--ink-muted); line-height: 1.6; font-weight: 300; display: flex; align-items: center; }
+
+  /* VERDICT */
+  .verdict { background: var(--tag-bg); border-left: 4px solid var(--accent); padding: 1.6rem 1.8rem; margin: 2.2rem 0; }
+  .verdict-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-mid); margin-bottom: 0.7rem; }
+  .verdict p { font-size: 0.93rem; color: var(--ink); line-height: 1.85; font-weight: 300; margin: 0; }
+
+  /* REFERENCES */
+  .references { margin-top: 2.4rem; padding-top: 1.4rem; border-top: 1px solid var(--rule); }
+  .references-label { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-mid); margin-bottom: 0.8rem; }
+  .references ol { padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .references li { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-muted); line-height: 1.6; letter-spacing: 0.02em; }
+  .references a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-light); }
+  .references a:hover { color: var(--accent-mid); }
+
+  /* SIDEBAR */
+  .sidebar-card { background: var(--surface); border: 1px solid var(--rule); padding: 1.4rem; margin-bottom: 1.2rem; }
+  .sidebar-card-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-mid); margin-bottom: 0.8rem; }
+  .sidebar-card p { font-size: 0.82rem; color: var(--ink-muted); line-height: 1.7; font-weight: 300; margin-bottom: 0.8rem; }
+  .sidebar-cta { display: block; background: var(--accent); color: #fff; text-align: center; padding: 0.7rem 1rem; font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; margin-top: 0.6rem; }
+  .sidebar-cta:hover { background: #122840; }
+  .sidebar-stat { display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.6rem; }
+  .sidebar-stat-num { font-family: var(--mono); font-size: 1.3rem; color: var(--accent); font-weight: 500; }
+  .sidebar-stat-desc { font-size: 0.75rem; color: var(--ink-muted); font-weight: 300; line-height: 1.4; }
+
+  /* FOOTER */
+  footer { border-top: 1px solid var(--rule); background: var(--accent); padding: 1.4rem 5vw; display: flex; align-items: center; justify-content: space-between; }
+  footer span { font-family: var(--mono); font-size: 0.65rem; color: rgba(255,255,255,0.35); letter-spacing: 0.08em; text-transform: uppercase; }
+
+  @media (max-width: 768px) {
+    .article-body { grid-template-columns: 1fr; }
+    .article-sidebar { display: none; }
+    .pros-cons { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">The Sleep SOP</a>
+  <a class="nav-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M12 7H2M7 12l-5-5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Home
+  </a>
+</nav>
+
+<div class="article-hero">
+  <div class="article-hero-inner">
+    <div class="article-tag">Legal</div>
+    <h1>Privacy <em>Policy</em></h1>
+    <p class="article-deck">This page explains what data we collect when you visit The Sleep SOP, how we use it, and what your rights are. Last updated: August 2026.</p>
+    <div class="article-meta">
+      <span>The Sleep SOP</span>
+      <time datetime="2026-08-01">August 2026</time>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+<div class="article-content" style="max-width:680px">
+
+  <h2>Who we are</h2>
+  <p>The Sleep SOP (<strong>thesleepsop.com</strong>) is a science-backed sleep improvement resource. To get in touch, visit our <a href="contact.html" style="color:var(--accent)">contact page</a>.</p>
+
+  <h2>What data we collect</h2>
+
+  <h3>1. Cookies</h3>
+  <p>We use two types of cookies. <strong>Essential cookies</strong> remember your cookie preference so we don't ask every visit. <strong>Analytics cookies</strong> (only with your consent) use Google Analytics to understand how visitors use the site — pages visited, time spent, device type. All data is anonymised. We never sell it.</p>
+
+  <h3>2. Advertising</h3>
+  <p>We display ads through Google AdSense. Google uses cookies to serve relevant ads based on your browsing history. You can opt out at <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener" style="color:var(--accent)">Google Ad Settings</a>.</p>
+
+  <h3>3. Affiliate links</h3>
+  <p>We are a participant in the <strong>Amazon Services LLC Associates Program</strong>. When you click a product link and buy on Amazon, we may earn a small commission — at no extra cost to you. Amazon may set cookies to track these purchases. We also participate in other affiliate programmes. Commissions never influence our editorial content. All affiliate links are labelled on the page.</p>
+
+  <h3>4. Newsletter</h3>
+  <p>If you subscribe, we collect your email address via Formspree to send sleep-related updates. We don't share it with third parties. Unsubscribe any time via the link in any email.</p>
+
+  <h3>5. Contact form</h3>
+  <p>If you contact us, we collect your name and email solely to reply. This information is not stored beyond the correspondence.</p>
+
+  <h2>Legal basis (GDPR)</h2>
+  <p><strong>Consent</strong> — analytics and advertising cookies, loaded only after you accept. <strong>Legitimate interests</strong> — essential cookies. <strong>Contract</strong> — newsletter delivery.</p>
+
+  <h2>Third parties</h2>
+  <p><strong>Google Analytics</strong> — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--accent)">policies.google.com/privacy</a><br>
+  
+  <strong>Amazon Associates</strong> — <a href="https://www.amazon.com/privacy" target="_blank" rel="noopener" style="color:var(--accent)">amazon.com/privacy</a><br>
+ 
+
+
+  <h2>Children</h2>
+  <p>This site is not directed at children under 13. We do not knowingly collect data from children.</p>
+
+  <h2>Changes</h2>
+  <p>We may update this policy from time to time. The date at the top reflects the latest revision.</p>
+
+<aside class="article-sidebar">
+  <div class="sidebar-card">
+    <div class="sidebar-card-label">Quick links</div>
+    <p style="font-size:0.82rem;color:var(--ink-muted);font-weight:300;line-height:1.8;">
+      <a href="about.html" style="color:var(--accent);display:block;margin-bottom:0.4rem;">About The Sleep SOP</a>
+      <a href="contact.html" style="color:var(--accent);display:block;margin-bottom:0.4rem;">Contact us</a>
+      <a href="sleep-research.html" style="color:var(--accent);display:block;">Sleep Research</a>
+    </p>
+  </div>
+  <div class="sidebar-card">
+    <div class="sidebar-card-label">Cookie settings</div>
+    <p style="font-size:0.82rem;color:var(--ink-muted);font-weight:300;line-height:1.65;">To change your cookie preference, clear your browser's local storage or open this site in a private window.</p>
+  </div>
+</aside>
+</div>
+
+<footer role="contentinfo">
+  <span>&#169; 2026 The Sleep SOP</span>
+  <span style="display:flex;gap:1.5rem;align-items:center;">
+    <a href="privacy-policy.html" style="color:rgba(255,255,255,0.4);font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;">Privacy</a>
+    <a href="contact.html" style="color:rgba(255,255,255,0.4);font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;">Contact</a>
+    <a href="about.html" style="color:rgba(255,255,255,0.4);font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;">About</a>
+  </span>
+</footer>
+
+</body>
+</html>
