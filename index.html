@@ -946,6 +946,7 @@
     <li><a href="#infocus">In Focus</a></li>
     <li><a href="sleep-research.html">Articles</a></li>
     <li><a href="#quiz">Sleep Quiz</a></li>
+    <li><a href="sleep-advisor.html" style="color:var(--accent);border-bottom:1px solid var(--accent-light);">AI Advisor ✦</a></li>
     <li><a href="#newsletter">Newsletter</a></li>
     <li><a href="contact.html" style="color:var(--ink-muted);">Contact</a></li>
     <li><a href="privacy-policy.html" style="color:var(--ink-muted);">Privacy</a></li>
@@ -1055,7 +1056,7 @@
       <div class="tip-long" id="tip3-long">Light is the most powerful external signal for your circadian clock. Specialised retinal cells (ipRGCs) detect short-wavelength blue light and transmit signals directly to the suprachiasmatic nucleus (SCN) — your brain's master clock. This sets the precise timing of melatonin suppression and schedules its onset ~14–16 hours later at night.<br><br>A landmark study by Gooley et al. (2011) found that morning light exposure dramatically shifts melatonin onset earlier the following evening. Even on overcast days, outdoor light delivers 10,000–50,000 lux, compared to just 200–500 lux from typical indoor lighting — meaning sitting near a window is not equivalent to going outside. The protocol: 10–30 minutes outdoors within 60 minutes of waking, without sunglasses.</div>
       <button class="tip-read-more" onclick="toggleTip('tip3')" id="tip3-btn">Read more <span class="arrow">↓</span></button>
 
-     <!-- <div class="tip-affiliate" id="tip3-affiliate">
+    <!--  <div class="tip-affiliate" id="tip3-affiliate">
         <div class="tip-affiliate-label">Recommended products</div>
         <div class="tip-affiliate-products">
           <a href="YOUR_AFFILIATE_LINK_LUMIE" target="_blank" rel="noopener sponsored">Lumie Bodyclock Luxe — Sunrise Alarm <span class="aff-arrow">Shop →</span></a>
@@ -1095,7 +1096,7 @@
       <div class="tip-long" id="tip5-long">Alcohol is a sedative that induces unconsciousness — but sedation and sleep are neurologically distinct states. Alcohol suppresses REM sleep during the first half of the night by blocking the brain systems that normally generate it. REM sleep is essential for emotional memory processing, creativity, and learning consolidation. The consequence: impaired emotional regulation, reduced problem-solving, and elevated cortisol the next day.<br><br>In the second half of the night, as the liver metabolises the alcohol, a rebound effect occurs: REM pressure surges, causing vivid dreams, night sweats, and frequent awakenings. Even moderate drinking (1–2 standard drinks) measurably degrades sleep architecture. Alcohol also relaxes throat muscles, significantly worsening snoring and sleep apnoea — even in people who do not normally have these conditions.</div>
       <button class="tip-read-more" onclick="toggleTip('tip5')" id="tip5-btn">Read more <span class="arrow">↓</span></button>
 
-   <!--   <div class="tip-affiliate" id="tip5-affiliate">
+    <!--  <div class="tip-affiliate" id="tip5-affiliate">
         <div class="tip-affiliate-label">Recommended products</div>
         <div class="tip-affiliate-products">
           <a href="YOUR_AFFILIATE_LINK_OURA" target="_blank" rel="noopener sponsored">Oura Ring Gen 4 — Sleep & HRV Tracker <span class="aff-arrow">Shop →</span></a>
@@ -1115,7 +1116,7 @@
       <div class="tip-long" id="tip6-long">Regular aerobic exercise is one of the most robust non-pharmacological interventions for sleep quality. A meta-analysis by Kredlow et al. (2015) covering 66 studies found exercise significantly improves sleep onset, total sleep time, efficiency, and slow-wave sleep depth. The mechanisms: exercise raises core body temperature (which then drops more sharply, deepening sleep), increases adenosine accumulation, and reduces cortisol and anxiety.<br><br>However, vigorous exercise within 1–2 hours of bedtime can delay sleep onset by elevating adrenaline, norepinephrine, and heart rate — all alertness signals. Individual responses vary widely. The safest protocol: complete intense workouts at least 2 hours before bed; light stretching or yoga close to bedtime is beneficial rather than harmful.</div>
       <button class="tip-read-more" onclick="toggleTip('tip6')" id="tip6-btn">Read more <span class="arrow">↓</span></button>
 
-    <!--  <div class="tip-affiliate" id="tip6-affiliate">
+    <!-- <div class="tip-affiliate" id="tip6-affiliate">
         <div class="tip-affiliate-label">Recommended products</div>
         <div class="tip-affiliate-products">
           <a href="YOUR_AFFILIATE_LINK_GARMIN" target="_blank" rel="noopener sponsored">Garmin Forerunner 265 — Sleep & Training Tracker <span class="aff-arrow">Shop →</span></a>
@@ -1155,7 +1156,7 @@
       <div class="tip-long" id="tip8-long">Pre-sleep cognitive arousal — racing thoughts, worry, mental rehearsal — is one of the leading causes of sleep onset insomnia. The prefrontal cortex remains hyperactive at bedtime because the brain interprets "unfinished tasks" as threats. The result: elevated cortisol and norepinephrine at a time when both should be declining.<br><br>A 2018 randomised controlled study by Scullin et al. at Baylor University found that spending 5 minutes writing a to-do list of upcoming tasks — rather than journaling about the day — reduced sleep onset latency by an average of 9 minutes. The more specific the list, the greater the benefit. The mechanism: externalising tasks satisfies the brain's "Zeigarnik effect," allowing the prefrontal cortex to disengage. This is a core component of Cognitive Behavioural Therapy for Insomnia (CBT-I).</div>
       <button class="tip-read-more" onclick="toggleTip('tip8')" id="tip8-btn">Read more <span class="arrow">↓</span></button>
 
-    <!--  <div class="tip-affiliate" id="tip8-affiliate">
+     <!-- <div class="tip-affiliate" id="tip8-affiliate">
         <div class="tip-affiliate-label">Recommended products</div>
         <div class="tip-affiliate-products">
           <a href="YOUR_AFFILIATE_LINK_LEUCHTTURM" target="_blank" rel="noopener sponsored">Leuchtturm1917 Hardcover Notebook — Worry journalling <span class="aff-arrow">Shop →</span></a>
@@ -1179,11 +1180,29 @@
   <p class="section-sub">Longer reads on specific sleep topics — each grounded in peer-reviewed research and written to be practical, not academic.</p>
   <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); max-width: 900px;">
 
+    <!-- Card 0: Supplements Buyer's Guide -->
+    <div style="background: var(--surface); padding: 2rem; display: flex; flex-direction: column; gap: 1rem; border: 2px solid #D6EFD6; position: relative;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+        <div style="background: #D6EFD6; color: #2A6B2A; font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.6rem;">&#x1F341; Buyer's Guide</div>
+        <span style="font-family: var(--mono); font-size: 0.6rem; color: var(--rule);">01</span>
+      </div>
+      <h3 style="font-family: var(--serif); font-size: 1.2rem; line-height: 1.3; color: var(--ink);">Best B1 &amp; magnesium supplements for sleep</h3>
+      <p style="font-size: 0.85rem; color: var(--ink-muted); line-height: 1.75; font-weight: 300; flex: 1;">The form matters as much as the brand. Our top picks — Canadian-made products first — with what to look for on the label and why it matters for sleep.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.3rem;">
+        <span style="font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.08em; color: #2A6B2A; background: #D6EFD6; padding: 0.2rem 0.5rem;">&#x1F341; Canadian brands</span>
+        <span style="font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.08em; color: var(--accent); background: var(--accent-light); padding: 0.2rem 0.5rem;">Magnesium · Vitamin B1</span>
+      </div>
+      <div style="border-top: 1px solid var(--rule); padding-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-family: var(--mono); font-size: 0.62rem; color: var(--ink-muted);">3 min · * Affiliate links</span>
+        <a href="best-sleep-supplements-b1-magnesium.html" style="font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: #2A6B2A; text-decoration: none; display: flex; align-items: center; gap: 0.4rem;">Read more <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+
     <!-- Card 1: Melatonin -->
     <div style="background: var(--bg); padding: 2rem; display: flex; flex-direction: column; gap: 1rem;">
       <div style="display: flex; justify-content: space-between; align-items: flex-start;">
         <div style="background: var(--tag-bg); color: var(--accent); font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.6rem;">In Focus</div>
-        <span style="font-family: var(--mono); font-size: 0.6rem; color: var(--rule);">01</span>
+        <span style="font-family: var(--mono); font-size: 0.6rem; color: var(--rule);">02</span>
       </div>
       <h3 style="font-family: var(--serif); font-size: 1.2rem; line-height: 1.3; color: var(--ink);">Is melatonin worth taking?</h3>
       <p style="font-size: 0.85rem; color: var(--ink-muted); line-height: 1.75; font-weight: 300; flex: 1;">The world's most popular sleep aid — but the evidence is more nuanced than the label suggests. Pros, cons, the dosing mistake most people make, and when it actually helps.</p>
@@ -1201,7 +1220,7 @@
     <div style="background: var(--bg); padding: 2rem; display: flex; flex-direction: column; gap: 1rem;">
       <div style="display: flex; justify-content: space-between; align-items: flex-start;">
         <div style="background: var(--accent-light); color: var(--accent); font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.6rem;">Research Review</div>
-        <span style="font-family: var(--mono); font-size: 0.6rem; color: var(--rule);">02</span>
+        <span style="font-family: var(--mono); font-size: 0.6rem; color: var(--rule);">03</span>
       </div>
       <h3 style="font-family: var(--serif); font-size: 1.2rem; line-height: 1.3; color: var(--ink);">7 science-backed ways to sleep better — no pills needed</h3>
       <p style="font-size: 0.85rem; color: var(--ink-muted); line-height: 1.75; font-weight: 300; flex: 1;">7 physicians at Cedars-Sinai & UCLA reviewed the full evidence base for non-pharmacological sleep interventions — CBT-I, diet, exercise, light, and substance use — in one landmark paper.</p>
@@ -1220,7 +1239,7 @@
     <div style="background: var(--bg); padding: 2rem; display: flex; flex-direction: column; gap: 1rem;">
       <div style="display: flex; justify-content: space-between; align-items: flex-start;">
         <div style="background: var(--tag-bg); color: var(--accent); font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.6rem;">In Focus</div>
-        <span style="font-family: var(--mono); font-size: 0.6rem; color: var(--rule);">03</span>
+        <span style="font-family: var(--mono); font-size: 0.6rem; color: var(--rule);">04</span>
       </div>
       <h3 style="font-family: var(--serif); font-size: 1.2rem; line-height: 1.3; color: var(--ink);">High blood pressure and sleep: what's the link?</h3>
       <p style="font-size: 0.85rem; color: var(--ink-muted); line-height: 1.75; font-weight: 300; flex: 1;">Irregular sleep raises hypertension risk by up to 32%. Up to 80% of people with treatment-resistant high blood pressure have undiagnosed sleep apnoea. Here's what the research says.</p>
@@ -1238,7 +1257,7 @@
     <div style="background: var(--bg); padding: 2rem; display: flex; flex-direction: column; gap: 1rem;">
       <div style="display: flex; justify-content: space-between; align-items: flex-start;">
         <div style="background: var(--tag-bg); color: var(--accent); font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.6rem;">In Focus</div>
-        <span style="font-family: var(--mono); font-size: 0.6rem; color: var(--rule);">04</span>
+        <span style="font-family: var(--mono); font-size: 0.6rem; color: var(--rule);">05</span>
       </div>
       <h3 style="font-family: var(--serif); font-size: 1.2rem; line-height: 1.3; color: var(--ink);">Does magnesium actually help you sleep?</h3>
       <p style="font-size: 0.85rem; color: var(--ink-muted); line-height: 1.75; font-weight: 300; flex: 1;">Studies show it can cut time to fall asleep by up to 17 minutes — but the form you take matters, and the evidence is strongest in older adults. Here's the balanced picture.</p>
@@ -1252,29 +1271,12 @@
     </div>
 
 
-    <!-- Card 5: AI & Sleep -->
-    <div style="background: var(--bg); padding: 2rem; display: flex; flex-direction: column; gap: 1rem;">
-      <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-        <div style="background: var(--tag-bg); color: var(--accent); font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.6rem;">In Focus</div>
-        <span style="font-family: var(--mono); font-size: 0.6rem; color: var(--rule);">05</span>
-      </div>
-      <h3 style="font-family: var(--serif); font-size: 1.2rem; line-height: 1.3; color: var(--ink);">How AI is changing the way we diagnose sleep problems</h3>
-      <p style="font-size: 0.85rem; color: var(--ink-muted); line-height: 1.75; font-weight: 300; flex: 1;">AI now detects sleep apnoea with up to 99% accuracy and stages your sleep as well as a trained specialist — and it's already in the wearable on your wrist.</p>
-      <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.3rem;">
-        <span style="font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.08em; color: var(--accent); background: var(--accent-light); padding: 0.2rem 0.5rem;">AI · Sleep apnoea · Wearables</span>
-      </div>
-      <div style="border-top: 1px solid var(--rule); padding-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
-        <span style="font-family: var(--mono); font-size: 0.62rem; color: var(--ink-muted);">3 min · 2 sources · 2026</span>
-        <a href="ai-sleep.html" style="font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); text-decoration: none; display: flex; align-items: center; gap: 0.4rem;">Read more <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </div>
-    </div>
-
-
+    
     <!-- Card 6: Vitamin B1 -->
     <div style="background: var(--bg); padding: 2rem; display: flex; flex-direction: column; gap: 1rem;">
       <div style="display: flex; justify-content: space-between; align-items: flex-start;">
         <div style="background: var(--tag-bg); color: var(--accent); font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.6rem;">In Focus</div>
-        <span style="font-family: var(--mono); font-size: 0.6rem; color: var(--rule);">06</span>
+        <span style="font-family: var(--mono); font-size: 0.6rem; color: var(--rule);">07</span>
       </div>
       <h3 style="font-family: var(--serif); font-size: 1.2rem; line-height: 1.3; color: var(--ink);">Vitamin B1 and sleep: what does the research say?</h3>
       <p style="font-size: 0.85rem; color: var(--ink-muted); line-height: 1.75; font-weight: 300; flex: 1;">Low thiamine is linked to sleeping 9+ hours — still feeling tired. Here's how B1 affects sleep, who's most at risk, and whether supplements help.</p>
